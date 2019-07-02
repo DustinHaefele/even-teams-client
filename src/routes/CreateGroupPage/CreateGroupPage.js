@@ -1,4 +1,5 @@
 import React from 'react'
+import CreateGroupForm from '../../components/CreateGroupForm/CreateGroupForm'
 
 export default class CreateGroupPage extends React.Component {
 
@@ -6,6 +7,7 @@ export default class CreateGroupPage extends React.Component {
     return (
       <div>
         <h2>Create New Group</h2>
+        <CreateGroupForm />
       </div>
     );
   }
