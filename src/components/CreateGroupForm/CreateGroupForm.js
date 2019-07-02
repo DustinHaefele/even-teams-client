@@ -1,5 +1,6 @@
 import React from 'react';
 import config from '../../config';
+import TokenService from '../../services/token-services';
 
 export default class CreateGroupForm extends React.Component {
 
@@ -16,6 +17,7 @@ export default class CreateGroupForm extends React.Component {
     fetch(`${config.API_ENDPOINT}/groups`,{
       method: 'POST',
       headers:{
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
       body: JSON.stringify(group),

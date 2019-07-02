@@ -1,5 +1,6 @@
 import React from 'react';
 import config from '../../config';
+import TokenService from '../../services/token-services';
 
 export default class RegisterForm extends React.Component {
   
@@ -23,6 +24,7 @@ export default class RegisterForm extends React.Component {
     fetch(`${config.API_ENDPOINT}/users`,{
       method: 'POST',
       headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
       body:  JSON.stringify(user),

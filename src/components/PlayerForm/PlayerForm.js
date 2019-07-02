@@ -1,6 +1,7 @@
 import React from 'react';
 import './PlayerForm.css';
 import config from '../../config';
+import TokenService from '../../services/token-services';
 
 export default class PlayerForm extends React.Component {
   
@@ -18,6 +19,7 @@ export default class PlayerForm extends React.Component {
     fetch(`${config.API_ENDPOINT}/players`,{
       method: 'POST',
       headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
         'content-type': 'application/json'
       },
       body:  JSON.stringify(player),
