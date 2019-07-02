@@ -40,7 +40,7 @@ export default class CreateGroupForm extends React.Component {
    return ( 
    <form onSubmit={this.handleSubmit}>
      <label htmlFor='group_name'>Group Name: </label>
-     <input className ='group-input' name='group_name' placeholder='Group Name' />
+     <input required className ='group-input' name='group_name' placeholder='Group Name' />
      <button type='submit'>Create Group</button>
     </form>
     );
