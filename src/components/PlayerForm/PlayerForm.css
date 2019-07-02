@@ -1,0 +1,20 @@
+.button {
+  padding: 5px 10px;
+  background-color: #FDFDFF;
+  color: #282828;
+  font-weight: 700;
+  border-radius: 10%;
+  margin: 5px 5px;
+}
+
+#playerName, #playerSkill{
+  background-color: #FDFDFF;
+  padding: 5px 10px 5px 1px;
+  border-radius: 10%;
+  margin: 5px 5px;
+}
+
+
+
+
+
