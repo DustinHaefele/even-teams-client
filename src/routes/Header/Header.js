@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-//import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-services'
 import './Header.css'
 
 export default class Header extends Component {
-  // handleLogoutClick = () => {
-  //   TokenService.clearAuthToken();
-  // }
+  handleLogoutClick = () => {
+    TokenService.clearAuthToken();
+  }
 
   renderLogoutLink() {
     return (
@@ -45,10 +45,10 @@ export default class Header extends Component {
           </Link>
         </h1>
         
-        {this.renderLoginLink()}
-          {/* TokenService.hasAuthToken()
+        
+          {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
-          :  */}
+          : this.renderLoginLink()}
       </nav>
 
     

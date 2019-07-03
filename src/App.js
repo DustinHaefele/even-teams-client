@@ -6,8 +6,10 @@ import RegistrationPage from './routes/RegistrationPage/RegistrationPage';
 import CreateGroupPage from './routes/CreateGroupPage/CreateGroupPage';
 import AddPlayersPage from './routes/AddPlayersPage/AddPlayersPage';
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage';
+import MyGroupsPage from './routes/MyGroupsPage/MyGroupsPage';
 import './App.css';
 import Header from './routes/Header/Header';
+import MakeTeamsPage from './routes/MakeTeamsPage/MakeTeamsPage';
 
 class App extends React.Component {
   state = {hasError: false};
@@ -41,6 +43,14 @@ class App extends React.Component {
             <Route
               path={'/add-players/:group_id'}
               component={AddPlayersPage}
+            />
+            <Route 
+              path={'/groups/:user_id'}
+              component={MyGroupsPage}
+            />
+            <Route 
+              path={'/maketeams/:group_id'}
+              component={MakeTeamsPage}
             />
             <Route
               component={NotFoundPage}
