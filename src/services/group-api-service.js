@@ -14,6 +14,23 @@ const groupApiService = {
       }
       return res.json();
     })
+  },
+
+  insertGroup(group){
+    return fetch(`${config.API_ENDPOINT}/groups`,{
+      method: 'POST',
+      headers:{
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(group),
+    })
+    .then(res=>{
+      if(!res.ok){
+        return res.json().then(e=>Promise.reject(e))
+      }
+      return res.json();
+    });
   }
 }
 

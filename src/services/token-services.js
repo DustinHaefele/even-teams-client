@@ -16,14 +16,9 @@ const TokenService = {
 
   getUserIdFromToken() {
     const token = this.getAuthToken();
-    console.log(token);
     const codedUser = token.split('.')[1];
-    console.log(codedUser)
-    
     const payload = window.atob(codedUser)
     const parsedPayload = JSON.parse(payload) 
-        console.log(payload);
-        console.log(parsedPayload);
 
     return parsedPayload.user_id;
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import groupApiService from '../../services/group-api-service';
+import CreateGroupForm from '../../components/CreateGroupForm/CreateGroupForm';
 
 
 export default class MyGroupPage extends React.Component {
@@ -10,8 +11,20 @@ export default class MyGroupPage extends React.Component {
 
   state = {
     error: null, 
-    groups: []
+    groups: [],
+    addGroup: false,
   }
+
+  toggleAddGroup = () => {
+    this.setState({addGroup: !this.state.addGroup});
+  }
+
+  addGroup = newGroup =>{
+    console.log(newGroup);
+    this.setState({
+      groups: [...this.state.groups, newGroup]
+    })
+  } 
 
   componentDidMount() {
     groupApiService.getGroupsByUserId(this.props.match.params.user_id)
@@ -31,6 +44,7 @@ export default class MyGroupPage extends React.Component {
       return (
         <li key={group.id}>
           <Link to={`/maketeams/${group.id}`}>
+            {/* make these buttons? */}
             {group.group_name};
           </Link>
         </li>
@@ -48,8 +62,9 @@ export default class MyGroupPage extends React.Component {
         <ul>
           {this.renderMyGroups()}
         </ul>
-
-
+        {this.state.addGroup ? 
+        <CreateGroupForm toggleForm={this.toggleAddGroup} addGroup={this.addGroup} /> : 
+        <button onClick={this.toggleAddGroup}>Create New Group</button>}
       </div>
     );
   };
