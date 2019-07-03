@@ -4,7 +4,9 @@ import config from '../../config';
 import TokenService from '../../services/token-services';
 
 export default class PlayerForm extends React.Component {
-  
+  static defaultProps ={
+    toggleForm: () =>{}
+  }
   state = {
     error: null,
   }
@@ -29,9 +31,11 @@ export default class PlayerForm extends React.Component {
         return res.json().then(e=>Promise.reject(e))
       }
       return res.json();
-    }).then(()=>{
+    }).then(player=>{
       player_name.value = '';
       player_skill.value = 1;
+      this.props.addPlayer(player)
+      this.props.toggleForm();
     }).catch(res =>{
       this.setState({
         error:res.error
@@ -54,7 +58,7 @@ export default class PlayerForm extends React.Component {
           <option value={5}>5 - best</option>
         </select>
         <button type="submit" className="button">
-          Add Player
+          Add This Player
         </button>
       </form>
     );

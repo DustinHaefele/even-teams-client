@@ -1,5 +1,6 @@
 import React from 'react'
 import playerApiService from '../../services/player-api-service';
+import PlayerForm from '../../components/PlayerForm/PlayerForm'
 
 
 export default class SingleGroupPage extends React.Component {
@@ -7,6 +8,11 @@ export default class SingleGroupPage extends React.Component {
   state = {
     error: null, 
     players: [],
+    addPlayer: false,
+  }
+
+  toggleAddPlayer = () => {
+    this.setState({addPlayer: !this.state.addPlayer});
   }
 
   componentDidMount() {
@@ -19,7 +25,13 @@ export default class SingleGroupPage extends React.Component {
       }).catch(error=>this.setState({error}))
   }
 
-  renderPlayersList() {
+  addPlayer = newPlayer =>{
+    this.setState({
+      players: [newPlayer, ...this.state.players]
+    })
+  } 
+
+  renderPlayersList = () => {
     const allPlayersArray = this.state.players.map(player=>{
       return (
         <li key={player.id}>
@@ -39,7 +51,9 @@ export default class SingleGroupPage extends React.Component {
         <ul className='all-players'>
           {this.renderPlayersList()}
         </ul>
-        <button>Add Player</button>
+        {this.state.addPlayer ? 
+        <PlayerForm toggleForm={this.toggleAddPlayer} addPlayer={this.addPlayer}/> : 
+        <button onClick={this.toggleAddPlayer}>Add New Player</button>}
         <button>Make Even Teams</button>
       </div>
     );
