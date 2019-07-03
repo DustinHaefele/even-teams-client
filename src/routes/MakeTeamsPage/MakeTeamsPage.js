@@ -52,7 +52,7 @@ export default class SingleGroupPage extends React.Component {
           {this.renderPlayersList()}
         </ul>
         {this.state.addPlayer ? 
-        <PlayerForm toggleForm={this.toggleAddPlayer} addPlayer={this.addPlayer}/> : 
+        <PlayerForm toggleForm={this.toggleAddPlayer} addPlayer={this.addPlayer} group_id={this.props.match.params.group_id}/> : 
         <button onClick={this.toggleAddPlayer}>Add New Player</button>}
         <button>Make Even Teams</button>
       </div>

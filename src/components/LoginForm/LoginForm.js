@@ -4,6 +4,7 @@ import TokenService from '../../services/token-services';
 
 export default class LoginForm extends React.Component {
 
+
   state = { error: null }
 
   handleSubmitJwtAuth = ev => {
@@ -21,13 +22,17 @@ export default class LoginForm extends React.Component {
     })
     .then(res=> {
       if (!res.ok)  {
-        return res.json().then(e=> Promise.reject(e))}  
+        return res.json().then(e=> Promise.reject(e))
+      }  
       return res.json();
     })
     .then(res => {
+      console.log(res);
       user_name.value = ''
       password.value = ''
       TokenService.saveAuthToken(res.authToken);
+      const user_id = TokenService.getUserIdFromToken();
+      this.props.handleLoginSuccess(user_id);
       //Navigate home page but logged in
     }).catch(err=>{this.setState({error: err})
     });
