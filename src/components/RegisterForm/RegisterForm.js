@@ -39,6 +39,7 @@ export default class RegisterForm extends React.Component {
       full_name.value = '';
       user_name.value = '';
       repeat_password.value = '';
+      this.props.onRegistrationSuccess();
     }).catch(res =>{
       this.setState({
         error:res.error
