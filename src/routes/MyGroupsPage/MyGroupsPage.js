@@ -6,7 +6,7 @@ import CreateGroupForm from '../../components/CreateGroupForm/CreateGroupForm';
 
 export default class MyGroupPage extends React.Component {
   static defaultProps = {
-  user_id: 1,
+  user_id: null,
 }
 
   state = {
@@ -20,11 +20,14 @@ export default class MyGroupPage extends React.Component {
   }
 
   addGroup = newGroup =>{
-    console.log(newGroup);
     this.setState({
       groups: [...this.state.groups, newGroup]
     })
   } 
+
+  handleAddFail = error =>{
+    this.setState({error});
+  }
 
   componentDidMount() {
     groupApiService.getGroupsByUserId(this.props.match.params.user_id)
@@ -59,11 +62,12 @@ export default class MyGroupPage extends React.Component {
     return (
       <div>
         <h2>My Groups</h2>
+        {this.state.error && <p>{this.state.error}</p>} {/*Add button here to navigate to your own page */}
         <ul>
           {this.renderMyGroups()}
         </ul>
         {this.state.addGroup ? 
-        <CreateGroupForm toggleForm={this.toggleAddGroup} addGroup={this.addGroup} /> : 
+        <CreateGroupForm toggleForm={this.toggleAddGroup} onAddFail = {this.handleAddFail} addGroup={this.addGroup} pageOwnerId = {this.props.match.params.user_id}/> : 
         <button onClick={this.toggleAddGroup}>Create New Group</button>}
       </div>
     );

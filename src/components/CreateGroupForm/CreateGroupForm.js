@@ -13,7 +13,10 @@ export default class CreateGroupForm extends React.Component {
     const {group_name} = ev.target
     const user_id = TokenService.getUserIdFromToken();
     const group = {group_name: group_name.value, user_id };
-
+    if(user_id !== this.props.pageOwnerId){
+      this.props.onAddFail('You do not have access to add groups to this user\'s page');
+      return null;
+    }
     groupApiService.insertGroup(group)
       .then(group=>{
         group_name.value = '';
