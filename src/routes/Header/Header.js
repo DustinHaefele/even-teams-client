@@ -4,8 +4,10 @@ import TokenService from '../../services/token-services'
 import './Header.css'
 
 export default class Header extends Component {
+  
   handleLogoutClick = () => {
     TokenService.clearAuthToken();
+    this.forceUpdate();
   }
 
   renderLogoutLink() {
@@ -41,11 +43,9 @@ export default class Header extends Component {
       <nav className='Header'>
         <h1>
           <Link to='/'>
-            Even Teams
+            ET
           </Link>
         </h1>
-        
-        
           {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

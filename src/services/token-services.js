@@ -11,7 +11,7 @@ const TokenService = {
     window.localStorage.removeItem(config.TOKEN_KEY);
   },
   hasAuthToken() {
-    return !!TokenService.getAuthToken()
+    return !!TokenService.getAuthToken();
   },
 
   getUserIdFromToken() {
@@ -22,7 +22,7 @@ const TokenService = {
 
     return parsedPayload.user_id;
 
-  }
+  },
 
 }
 

@@ -10,7 +10,6 @@ export default class LoginForm extends React.Component {
   handleSubmitJwtAuth = ev => {
     ev.preventDefault()
     this.setState({error:null});
-
     const { user_name, password } = ev.target
 
     fetch(`${config.API_ENDPOINT}/login`, {
@@ -32,14 +31,15 @@ export default class LoginForm extends React.Component {
       TokenService.saveAuthToken(res.authToken);
       const user_id = TokenService.getUserIdFromToken();
       this.props.handleLoginSuccess(user_id);
-      //Navigate home page but logged in
     }).catch(err=>{this.setState({error: err})
     });
   };
 
   render() {
+    const {error} = this.state;
     return (
       <form onSubmit={this.handleSubmitJwtAuth}>
+        <div>{error && <p>{error}</p>}</div>
         <label htmlFor='user_name'>User Name: </label>
         <input required className = 'login_user_name' name='user_name' placeholder='User Name'></input>
         <label htmlFor='password'>Password: </label>
