@@ -3,8 +3,8 @@ import {Switch, Route} from 'react-router-dom';
 import MainPage from './routes/MainPage/MainPage';
 import LoginPage from './routes/LoginPage/LoginPage';
 import RegistrationPage from './routes/RegistrationPage/RegistrationPage';
-import CreateGroupPage from './routes/CreateGroupPage/CreateGroupPage';
-import AddPlayersPage from './routes/AddPlayersPage/AddPlayersPage';
+import CreateGroupPage from './routes/future_pages/CreateGroupPage/CreateGroupPage';
+import AddPlayersPage from './routes/future_pages/AddPlayersPage/AddPlayersPage';
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage';
 import MyGroupsPage from './routes/MyGroupsPage/MyGroupsPage';
 import PublicRoute from './Routing/PublicRoute';
@@ -34,7 +34,7 @@ class App extends React.Component {
         <Header />
       </header>
       <main>
-      {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
+      {this.state.hasError && <p className='red'>Sorry, something went wrong!</p>}
           <Switch>
             <Route
               exact

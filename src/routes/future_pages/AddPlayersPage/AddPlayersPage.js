@@ -1,5 +1,5 @@
 import React from 'react';
-import PlayerForm from '../../components/PlayerForm/PlayerForm'
+import PlayerForm from '../../../components/PlayerForm/PlayerForm'
 
 export default class AddPlayersPage extends React.Component {
 
