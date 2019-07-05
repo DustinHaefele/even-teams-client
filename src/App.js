@@ -36,7 +36,6 @@ class App extends React.Component {
       <main>
       {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
           <Switch>
-            {/* Can make these public and private after adding AUth */}
             <Route
               exact
               path={'/'}
@@ -51,14 +50,14 @@ class App extends React.Component {
               path={'/register'}
               component={RegistrationPage}
             />
-            <PrivateRoute
+            {/* <PrivateRoute
               path={'/create-group'}
               component={CreateGroupPage}
             />
             <PrivateRoute
               path={'/add-players/:group_id'}
               component={AddPlayersPage}
-            />
+            /> These routes can be added in the future*/}
             <PrivateRoute 
               path={'/groups/:user_id'}
               component={MyGroupsPage}

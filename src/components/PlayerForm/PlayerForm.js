@@ -1,13 +1,11 @@
 import React from 'react';
 import './PlayerForm.css';
-// import config from '../../config';
-// import TokenService from '../../services/token-services';
 import playerApiService from '../../services/player-api-service';
 
 export default class PlayerForm extends React.Component {
   static defaultProps ={
     toggleForm: () =>{},
-    group_id: 1
+    group_id: null,
   }
   state = {
     error: null,
@@ -16,24 +14,10 @@ export default class PlayerForm extends React.Component {
   handleSubmit = ev => {
     ev.preventDefault();
     const {player_name, player_skill} = ev.target;
-    //adding player to a default group for now until I pass group down here.
     const player = {player_name: player_name.value, player_skill: player_skill.value, group_id: this.props.group_id }
     
     
-    // fetch(`${config.API_ENDPOINT}/players`,{
-    //   method: 'POST',
-    //   headers: {
-    //     'Authorization': `Bearer ${TokenService.getAuthToken()}`,
-    //     'content-type': 'application/json'
-    //   },
-    //   body:  JSON.stringify(player),
-    // })
-    // .then(res=>{
-    //   if(!res.ok){
-    //     return res.json().then(e=>Promise.reject(e))
-    //   }
-    //   return res.json();
-    // })
+    
     playerApiService.addPlayerToGroup(player)
       .then(player=>{
       player_name.value = '';
@@ -51,6 +35,7 @@ export default class PlayerForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        {this.state.error && <p>{this.state.error}</p>}
         <label htmlFor = 'player_name'>Player Name: </label>
         <input required className="player_name" name="player_name" type="text" placeholder="New Player" />
         <label htmlFor='player_skill'>Skill Level: </label>
