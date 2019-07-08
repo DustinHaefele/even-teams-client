@@ -10,7 +10,7 @@ import MyGroupsPage from './routes/MyGroupsPage/MyGroupsPage';
 import PublicRoute from './Routing/PublicRoute';
 import PrivateRoute from './Routing/PrivateRoute';
 import './App.css';
-import Header from './routes/Header/Header';
+import Header from './components/Header/Header';
 import MakeTeamsPage from './routes/MakeTeamsPage/MakeTeamsPage';
 
 

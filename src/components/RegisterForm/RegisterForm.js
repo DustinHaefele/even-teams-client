@@ -52,15 +52,25 @@ export default class RegisterForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmitRegistration}>
-        <label htmlFor='user_name'>User Name: </label>
-        <input required className = 'Register_user_name' name='user_name' placeholder='User Name'></input>
-        <label htmlFor='full_name'>Full Name: </label>
-        <input required className = 'Register_full_name' name='full_name' placeholder='Full Name'></input>
-        <label htmlFor='password'>Password: </label>
-        <input required className = 'Register_password' name='password' placeholder='Password'></input>
-        <label htmlFor='repeat-password'>Repeat Password: </label>
-        <input required className = 'Register_password' name='repeat_password' placeholder='Password'></input>
-        <button type='submit'>Register</button>
+        <div className='form-input-section'>
+          <label htmlFor='user-name'>User Name</label>
+          <input required className = 'register-user-name' name='user-name' placeholder='User Name'></input>
+       </div>
+        <div className='form-input-section'>
+          <label htmlFor='full-name'>Full Name</label>
+          <input required className = 'register-full-name' name='full_-ame' placeholder='Full Name'></input>
+        </div>
+        <div className='form-input-section'>
+          <label htmlFor='password'>Password</label>
+          <input required className = 'register-password' name='password' placeholder='Password'></input>
+        </div>
+        <div className='form-input-section'>
+          <label htmlFor='repeat-password'>Retype Password</label>
+          <input required className = 'register-password' name='repeat-password' placeholder='Retype Password'></input>
+        </div>
+        <div className='button-div'>
+         <button type='submit' className='register-button'>Register</button>
+         </div>
       </form>
     )
   }

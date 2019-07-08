@@ -43,7 +43,7 @@ export default class Header extends Component {
       <nav className='Header'>
         <h1>
           <Link to='/'>
-            ET
+            Even-Teams
           </Link>
         </h1>
           {TokenService.hasAuthToken()

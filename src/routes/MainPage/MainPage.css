@@ -1,0 +1,29 @@
+.main_page {
+  background-color: #305252;
+  height: 400px;
+}
+
+.main_page h1 {
+  margin-top: 0px;
+  padding-top: 20px;
+}
+
+.main_page a {
+  color: #f8fbfb;
+  text-decoration: none;
+  padding: 10px 30px;
+  border: solid black 1px;
+  border-radius: 20px;
+  background-color: #373E40;
+  
+}
+
+.main_page a:hover {
+  border: solid #f8fbfb 1px;
+}
+
+.main_page .Main__not-logged-in {
+  display: flex; 
+  justify-content: space-between;
+  margin: 40px 40%;
+}

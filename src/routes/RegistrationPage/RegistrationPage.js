@@ -1,5 +1,6 @@
 import React from 'react';
-import RegisterForm from '../../components/RegisterForm/RegisterForm'
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
+import './RegistrationPage.css';
 
 export default class RegistrationPage extends React.Component {
 
@@ -10,9 +11,9 @@ export default class RegistrationPage extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className='registration-page'>
         <h2>Register</h2>
-        <RegisterForm onRegistrationSuccess = {this.handleRegistrationSuccess}/>
+        <RegisterForm className='registration-form' onRegistrationSuccess = {this.handleRegistrationSuccess}/>
       </div>
     );
   }
