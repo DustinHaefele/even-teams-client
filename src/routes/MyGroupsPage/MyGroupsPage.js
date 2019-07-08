@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import groupApiService from '../../services/group-api-service';
 import CreateGroupForm from '../../components/CreateGroupForm/CreateGroupForm';
+import './MyGroupsPage.css'
 
 
 export default class MyGroupPage extends React.Component {
@@ -45,12 +46,14 @@ export default class MyGroupPage extends React.Component {
   renderMyGroups = () =>{
     const groupArray = this.state.groups.map(group =>{
       return (
-        <li key={group.id}>
+        
           <Link to={`/maketeams/${group.id}`}>
+            <li key={group.id}>
             {/* make these buttons? */}
-            {group.group_name};
+            {group.group_name}
+            </li>
           </Link>
-        </li>
+       
       );
   })
     return groupArray;
@@ -63,12 +66,12 @@ export default class MyGroupPage extends React.Component {
       <div>
         <h2>My Groups</h2>
         {this.state.error && <p>{this.state.error}</p>} {/*Add button here to navigate to your own page */}
-        <ul>
+        <ul className='groups-list'>
           {this.renderMyGroups()}
         </ul>
         {this.state.addGroup ? 
         <CreateGroupForm toggleForm={this.toggleAddGroup} onAddFail = {this.handleAddFail} addGroup={this.addGroup} pageOwnerId = {this.props.match.params.user_id}/> : 
-        <button onClick={this.toggleAddGroup}>Create New Group</button>}
+        <button className='create-group-button' onClick={this.toggleAddGroup}>Create New Group</button>}
       </div>
     );
   };
