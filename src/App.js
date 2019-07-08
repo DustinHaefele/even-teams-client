@@ -3,8 +3,8 @@ import {Switch, Route} from 'react-router-dom';
 import MainPage from './routes/MainPage/MainPage';
 import LoginPage from './routes/LoginPage/LoginPage';
 import RegistrationPage from './routes/RegistrationPage/RegistrationPage';
-import CreateGroupPage from './routes/future_pages/CreateGroupPage/CreateGroupPage';
-import AddPlayersPage from './routes/future_pages/AddPlayersPage/AddPlayersPage';
+//import CreateGroupPage from './routes/future_pages/CreateGroupPage/CreateGroupPage';
+//import AddPlayersPage from './routes/future_pages/AddPlayersPage/AddPlayersPage';
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage';
 import MyGroupsPage from './routes/MyGroupsPage/MyGroupsPage';
 import PublicRoute from './Routing/PublicRoute';
@@ -18,7 +18,6 @@ class App extends React.Component {
   state = {hasError: false};
 
   handleLogin = () => {
-    console.log('I\'m in')
     this.forceUpdate();
   }
 

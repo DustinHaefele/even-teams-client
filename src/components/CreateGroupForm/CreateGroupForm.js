@@ -13,7 +13,8 @@ export default class CreateGroupForm extends React.Component {
     const {group_name} = ev.target
     const user_id = TokenService.getUserIdFromToken();
     const group = {group_name: group_name.value, user_id };
-    if(user_id !== this.props.pageOwnerId){
+    if(user_id !== parseInt(this.props.pageOwnerId)){
+      console.log(user_id, this.props.pageOwnerId);
       this.props.onAddFail('You do not have access to add groups to this user\'s page');
       return null;
     }
@@ -33,10 +34,12 @@ export default class CreateGroupForm extends React.Component {
 
   render() {
    return ( 
-   <form onSubmit={this.handleSubmit}>
-     <label htmlFor='group_name'>Group Name: </label>
-     <input required className ='group-input' name='group_name' placeholder='Group Name' />
-     <button type='submit'>Create Group</button>
+   <form className='group-form' onSubmit={this.handleSubmit}>
+     <div className='form-input-section'>
+      <label htmlFor='group_name'>New Group Name</label>
+      <input required className ='group-input' name='group_name' placeholder='New Group Name' />
+     </div>
+      <button className='create-group-button' type='submit'>Create New Group</button>
     </form>
     );
   };

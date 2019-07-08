@@ -47,8 +47,8 @@ export default class MyGroupPage extends React.Component {
     const groupArray = this.state.groups.map(group =>{
       return (
         
-          <Link to={`/maketeams/${group.id}`}>
-            <li key={group.id}>
+          <Link key={group.id} to={`/maketeams/${group.id}`}>
+            <li>
             {/* make these buttons? */}
             {group.group_name}
             </li>
