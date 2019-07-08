@@ -44,20 +44,26 @@
     let teamTwo = [];
 
     allPlayers.forEach(player => {
-      if (player.skill === "1") {
-        level1 = [...level1, player.name];
-      } else if (player.skill === "2") {
-        level2 = [...level2, player.name];
-      } else if (player.skill === "3"){
-        level3 = [...level3, player.name];
+      if (player.player_skill === 1) {
+        level1 = [...level1, player];
+      } else if (player.player_skill === 2) {
+        level2 = [...level2, player];
+      } else if (player.player_skill === 3){
+        level3 = [...level3, player];
       }
-      else if (player.skill === "4"){
-        level4 = [...level4, player.name];
+      else if (player.player_skill === 4){
+        level4 = [...level4, player];
       }
       else {
-        level5 = [...level5, player.name];
+        level5 = [...level5, player];
       }
     });
+
+    console.log(level1);
+    console.log(level2);
+    console.log(level3);
+    console.log(level4);
+    console.log(level5);
 
     //Shuffle your Arrays to randomize teams
     level1 = this.shuffle(level1);
@@ -66,11 +72,11 @@
     level4 = this.shuffle(level4);
     level5 = this.shuffle(level5);
     
-    //const allPlayers = [...level1, ...level2, ...level3, ...level4, ...level5];
+    const sortedPlayers = [...level5, ...level4, ...level3, ...level2, ...level1];
 
     const seq = this.handleCreateSequence(allPlayers.length);
 
-    allPlayers.forEach((play, i) => {
+    sortedPlayers.forEach((play, i) => {
       if (seq[i] === 0) {
         teamOne = [...teamOne, play];
       } else {

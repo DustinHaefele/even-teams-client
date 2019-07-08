@@ -1,0 +1,30 @@
+
+.player {
+  border: 1px solid black;
+  margin-bottom: 5px;
+  padding: 5px 5px;
+  width: 45%;
+}
+
+.all-players {
+  
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.team-button-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.teams-page-buttons {
+  padding: 10px 10px;
+  border: .5px solid lightgray;
+  background-color: white;
+  margin: 10px 0;
+}

@@ -1,10 +1,41 @@
 .button {
-  padding: 5px 10px;
+  padding: 10px 20px;
   background-color: #FDFDFF;
   color: #282828;
   font-weight: 700;
-  border-radius: 10%;
-  margin: 5px 5px;
+  border-radius: 5px;
+  margin:10px 5px 10px 0;
+
+}
+
+.first-button {
+  margin-left: 10%;
+}
+
+.player-form { 
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 10%;
+  text-align: left;
+  border: 1px solid black;
+}
+
+.player-form h3 {
+  text-align: center;
+}
+
+.player-form select {
+  display: block;
+  height: 35px;
+  width: 40%;
+  font-size: 15px;
+  border: 1px solid lightgray;
+
+}
+
+.player-form .form-input-section {
+  margin-left: 10%;
+  width: 80%;
 }
 
 #playerName, #playerSkill{
@@ -13,6 +44,22 @@
   border-radius: 10%;
   margin: 5px 5px;
 }
+
+@media screen and (min-width: 480px) {
+  .player-form { 
+    width: 64%;
+    margin-left: 18%;
+  }
+
+  .player-form select {
+    display: block;
+    height: 35px;
+    width: 27%;
+    font-size: 15px;
+  }
+}
+
+
 
 
 

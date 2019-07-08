@@ -1,11 +1,16 @@
 .row {
-  width: 80%;
-  margin-left: 10%;
+  width: 96%;
+  margin-left: 2%;
   display: flex;
   justify-content: space-around;
   flex-flow: wrap;
 }
 
+.team-player {
+  border: 1px solid black;
+  margin-bottom: 5px;
+  padding: 5px 5px;
+}
 .team-list {
   list-style: none;
   padding: 0 0;
@@ -13,7 +18,7 @@
 
 .teams {
   width: 45%;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .red {

@@ -2,8 +2,8 @@ import React from "react";
 import './Teams.css'
 
 export default function Teams(props) {
-  const teamOne = props.teamOne.map((player) => <li key={player.id} className='emerald player-name'>{player.player_name}</li>);
-  const teamTwo = props.teamTwo.map((player) => <li key={player.id} className='red player-name'>{player.player_name}</li>);
+  const teamOne = props.teamOne.map((player) => <li key={player.id} className='emerald team-player'>{player.player_name}</li>);
+  const teamTwo = props.teamTwo.map((player) => <li key={player.id} className='red team-player'>{player.player_name}</li>);
   return (
     <div className="row">
       <div className="column teams">
