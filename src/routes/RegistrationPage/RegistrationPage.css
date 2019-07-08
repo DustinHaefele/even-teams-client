@@ -1,8 +1,8 @@
 .registration-page {
   margin-top: 20px;
   justify-content: left; 
-  width: 40%;
-  margin-left: 30%;
+  width: 80%;
+  margin-left: 10%;
   border: 1px solid black;
 }
 
@@ -14,7 +14,7 @@
 
 .registration-page form {
   text-align: left;
-  margin: 5px;
+  margin: 5px 5px 30px 5px;
   /* padding-left: 25%; */
 }
 
@@ -40,6 +40,13 @@
 }
 
 
-/* .register-user-name {
-  display: block
-} */
+@media screen and (min-width: 480px) {
+  .registration-page {
+    margin-top: 20px;
+    justify-content: left; 
+    width: 40%;
+    margin-left: 30%;
+    border: 1px solid black;
+  }
+ 
+}

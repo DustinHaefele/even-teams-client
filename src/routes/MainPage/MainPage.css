@@ -11,7 +11,7 @@
 .main_page a {
   color: #f8fbfb;
   text-decoration: none;
-  padding: 10px 30px;
+  padding: 10px 10px 10px 10px; 
   border: solid black 1px;
   border-radius: 20px;
   background-color: #373E40;
@@ -24,6 +24,6 @@
 
 .main_page .Main__not-logged-in {
   display: flex; 
-  justify-content: space-between;
-  margin: 40px 40%;
+  justify-content: space-around;
+  
 }

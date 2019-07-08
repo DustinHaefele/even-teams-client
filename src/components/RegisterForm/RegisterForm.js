@@ -65,8 +65,8 @@ export default class RegisterForm extends React.Component {
           <input required className = 'register-password' name='password' placeholder='Password'></input>
         </div>
         <div className='form-input-section'>
-          <label htmlFor='repeat-password'>Retype Password</label>
-          <input required className = 'register-password' name='repeat-password' placeholder='Retype Password'></input>
+          <label htmlFor='repeat-password'>Re-type Password</label>
+          <input required className = 'register-password' name='repeat-password' placeholder='Re-type Password'></input>
         </div>
         <div className='button-div'>
          <button type='submit' className='register-button'>Register</button>
