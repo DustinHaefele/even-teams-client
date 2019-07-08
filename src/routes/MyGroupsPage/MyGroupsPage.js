@@ -63,7 +63,7 @@ export default class MyGroupPage extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className='groups-page'>
         <h2>My Groups</h2>
         {this.state.error && <p>{this.state.error}</p>} {/*Add button here to navigate to your own page */}
         <ul className='groups-list'>
