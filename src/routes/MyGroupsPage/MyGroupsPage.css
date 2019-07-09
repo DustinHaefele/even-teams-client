@@ -3,10 +3,10 @@
   justify-content: left; 
   width: 80%;
   margin-left: 10%;
-  border: 1px solid black;
   border-radius: 20px;
-  background-color:rgba(27, 27, 30, .7);
-  color: #fffeff
+  background-color:rgba(70,83,98,.8);
+  color: #fffeff;
+  box-shadow: 0 5px 20px rgba(0,0,0, .8); 
 }
 
 .groups-list {
@@ -14,14 +14,31 @@
   padding: 0
 }
 
+.group-header {
+  padding-top: 20px;
+}
+
 .groups-list li{
-  padding: 10px 0;
+  padding: 7px 0;
   width: 95%;
   margin-left: 2%;
   margin-bottom: 5px;
   border: 1px solid black;
-  background-color: rgba(201,92,54,.7);
+  background-color: rgba(1,25,54,.9);
+  color: #fffeff;
   border-radius: 10px;
+}
+
+.groups-list a:nth-child(2n) li{
+  background-color: rgba(2,17,27,.9);
+}
+
+.groups-list li:hover {
+  box-shadow: 0 0 10px rgba(255,255,255, .8);
+}
+
+.group-input {
+  margin: 10px 0;
 }
 
 .groups-list a{
@@ -51,5 +68,9 @@
     width: 40%;
     margin-left: 30%;
     justify-content: left;
+  }
+
+  .groups-list li{
+    padding: 10px 0;
   }
 }

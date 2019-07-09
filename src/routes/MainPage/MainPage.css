@@ -1,13 +1,20 @@
 .main_page {
-  background-color: none;
-  height: 800px;
-  color: #CF5C36;
+  color: #19535F;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 40px;
+  height: 400px;
+  background-color: rgba(255,254,255,.8);
+  border: 1px solid black;
 }
 
-.main_page h1 {
+.main_header {
   margin-top: 0px;
   padding-top: 20px;
-  ;
+}
+
+.sec_header{
+  font-size: 16px;
 }
 
 .main_page a {
@@ -27,5 +34,18 @@
 .main_page .Main__not-logged-in {
   display: flex; 
   justify-content: space-around;
-  
+  margin-top: 40px;
+}
+
+@media screen and (min-width: 480px) {
+  .main_page {
+    width: 54%;
+    margin-left: 23%;
+    margin-top: 40px;
+    height: 400px;
+  }
+
+  .main_header {
+    font-size: 40px;
+  }
 }

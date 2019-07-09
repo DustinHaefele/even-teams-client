@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-services'
 import './Header.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export default class Header extends Component {
   
@@ -43,7 +45,9 @@ export default class Header extends Component {
       <nav className='Header'>
         <h1>
           <Link to='/'>
-            Even-Teams
+          <FontAwesomeIcon className='green' icon='volleyball-ball' />
+            {' '}
+          Even-Teams
           </Link>
         </h1>
           {TokenService.hasAuthToken()

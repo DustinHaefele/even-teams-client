@@ -8,9 +8,9 @@ function MainPage () {
 
   return (
     <div className='main_page'>
-      <h1>Even Teams</h1>
-      <h3>The goal at even teams is to make your pick-up sports as fun as possible.</h3>
-      <h4>To get started Choose an option below.</h4>  
+      <h1 className='main_header'>Even Teams</h1>
+      <h3 className='sec_header'>The goal at even teams is to make your pick-up sports as fun as possible.</h3>
+      <h4>To get started choose an option below.</h4>  
 
       {TokenService.hasAuthToken()
           ? (<div className='Main__not-logged-in'>
