@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import groupApiService from '../../services/group-api-service';
 import CreateGroupForm from '../../components/CreateGroupForm/CreateGroupForm';
 import './MyGroupsPage.css'
+import TokenService from '../../services/token-services';
 
 
 export default class MyGroupPage extends React.Component {
@@ -64,7 +65,7 @@ export default class MyGroupPage extends React.Component {
   render(){
     return (
       <div className='groups-page'>
-        <h2 className='group-header'>My Groups</h2>
+        <h2 className='group-header'>{TokenService.getUserNameFromToken()}'s Groups</h2>
         {this.state.error && <p>{this.state.error}</p>} {/*Add button here to navigate to your own page */}
         <ul className='groups-list'>
           {this.renderMyGroups()}

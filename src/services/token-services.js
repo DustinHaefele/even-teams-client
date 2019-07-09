@@ -24,6 +24,15 @@ const TokenService = {
 
   },
 
+  getUserNameFromToken() {
+    const token = this.getAuthToken();
+    const codedUser = token.split('.')[1];
+    const payload = window.atob(codedUser)
+    const parsedPayload = JSON.parse(payload) 
+
+    return parsedPayload.sub;
+  },
+
 }
 
 export default TokenService;

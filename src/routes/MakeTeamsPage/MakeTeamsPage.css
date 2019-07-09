@@ -4,22 +4,37 @@
   margin-bottom: 5px;
   padding: 5px 5px;
   width: 45%;
+  border-radius: 7px;
+  background-color: rgba(1,25,54,.75);
+}
+
+.all-players-header {
+  padding-top: 15px;
 }
 
 .all-players {
-  
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
   margin: 0 0;
-  padding: 0 0;
+  padding: 0 0 10px 0;
+}
+
+.all-players-section {
+  color: #fffeff;
+  box-shadow: 0 5px 20px rgba(0,0,0, .8); 
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 20px;
+  background-color:rgba(70,83,98,.8);
 }
 
 .team-button-div {
   display: flex;
   justify-content: space-around;
+  margin-top: 30px;
 }
 
 .teams-page-buttons {
@@ -27,6 +42,12 @@
   border: .5px solid lightgray;
   background-color: white;
   margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0, .8); 
+}
+
+.teams-page-buttons:hover {
+  box-shadow: 0 5px 10px rgba(255,255,255, .8);
 }
 
 @media screen and (min-width: 480px) {

@@ -2,7 +2,7 @@
   text-align: center;
   box-sizing: border-box;
   background-image: url('./volleyball.jpg');
-  height: 1000px;
+  min-height: 800px;
 }
 
 .App-logo {

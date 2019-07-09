@@ -1,11 +1,11 @@
 .button {
-  padding: 10px 20px;
-  background-color: #FDFDFF;
-  color: #282828;
+  padding: 10px 10px;
   font-weight: 700;
-  border-radius: 5px;
   margin:10px 5px 10px 0;
-
+  border: .5px solid lightgray;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0,0,0, .5); 
 }
 
 .first-button {
@@ -17,11 +17,16 @@
   margin-top: 20px;
   margin-left: 10%;
   text-align: left;
-  border: 1px solid black;
+  box-shadow: 0 5px 20px rgba(0,0,0, .8); 
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 20px;
+  background-color:rgba(255,255,255,.8);
 }
 
 .player-form h3 {
   text-align: center;
+  padding-top: 15px;
 }
 
 .player-form select {
@@ -29,8 +34,15 @@
   height: 35px;
   width: 40%;
   font-size: 15px;
-  border: 1px solid lightgray;
+  border: 1px solid black;
+  background-color: white;
+  margin: 10px 0;
+}
 
+.player-form input {
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
 }
 
 .player-form .form-input-section {

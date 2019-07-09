@@ -55,7 +55,7 @@
 }
 
 .create-group-button:hover {
-  border: .5px solid rgba(201,92,54,.7);
+  border: .5px solid #EEC643;
 }
 
 .group-form {
