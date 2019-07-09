@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   box-sizing: border-box;
+  background-image: url('./volleyball.jpg');
+  height: 1000px;
 }
 
 .App-logo {

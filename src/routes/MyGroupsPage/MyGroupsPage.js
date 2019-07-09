@@ -48,7 +48,7 @@ export default class MyGroupPage extends React.Component {
       return (
         
           <Link key={group.id} to={`/maketeams/${group.id}`}>
-            <li>
+            <li className='group'>
             {/* make these buttons? */}
             {group.group_name}
             </li>

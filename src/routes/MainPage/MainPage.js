@@ -15,7 +15,7 @@ function MainPage () {
       {TokenService.hasAuthToken()
           ? (<div className='Main__not-logged-in'>
           <Link className = 'main-login'
-            to='/groups'>
+            to={`/groups/${TokenService.getUserIdFromToken()}`}>
             Go to my groups
             {' '}
           </Link>
