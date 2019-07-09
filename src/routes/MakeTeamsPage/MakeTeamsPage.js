@@ -4,15 +4,19 @@ import PlayerForm from '../../components/PlayerForm/PlayerForm';
 import SplitTeamsService from '../../services/split-teams-service';
 import Teams from '../../components/Teams/Teams';
 import './MakeTeamsPage.css';
+import GroupApiService from '../../services/group-api-service';
 
 export default class SingleGroupPage extends React.Component {
   state = {
     error: null,
     allPlayers: [],
+    groupName: '',
     addPlayer: false,
     teamOne: [],
     teamTwo: []
   };
+
+  
 
   toggleAddPlayer = () => {
     this.setState({ addPlayer: !this.state.addPlayer });
@@ -33,6 +37,11 @@ export default class SingleGroupPage extends React.Component {
         });
       })
       .catch(error => this.setState({ error }));
+
+    GroupApiService.getGroupNameFromGroupId(this.props.match.params.group_id).then(groupName => {
+      this.setState({groupName})
+    })
+      
   }
 
   addPlayer = newPlayer => {
@@ -50,14 +59,13 @@ export default class SingleGroupPage extends React.Component {
     });
     return allPlayersArray;
   };
-
- 
+  
 
   render() {
     return (
       <div>
         {/*get the group name and put it here*/}
-        <h2>My Group</h2>
+        <h2>{this.state.groupName}</h2>
         <section className='all-players-section'>
           <h3 className='all-players-header'>All Players</h3>
           <ul className="all-players">{this.renderPlayersList()}</ul>

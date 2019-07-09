@@ -31,7 +31,21 @@ const groupApiService = {
       }
       return res.json();
     });
-  }
+  },
+
+  getGroupNameFromGroupId(group_id) {
+    return fetch(`${config.API_ENDPOINT}/groups/${group_id}`,{
+      headers:{
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+    .then(res=>{
+      if(!res.ok){
+        return res.json().then(e=>Promise.reject(e))
+      }
+      return res.json();
+    }).then(res => res.group_name);
+  },
 }
 
 export default groupApiService;
