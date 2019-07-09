@@ -28,3 +28,10 @@
   background-color: white;
   margin: 10px 0;
 }
+
+@media screen and (min-width: 480px) {
+  .team-button-div {
+    width: 60%;
+    margin-left: 20%;
+  }
+}

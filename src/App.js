@@ -12,7 +12,7 @@ import PrivateRoute from './Routing/PrivateRoute';
 import './App.css';
 import Header from './components/Header/Header';
 import MakeTeamsPage from './routes/MakeTeamsPage/MakeTeamsPage';
-
+import Footer from './components/Footer/Footer'
 
 class App extends React.Component {
   state = {hasError: false};
@@ -70,6 +70,7 @@ class App extends React.Component {
             /> 
           </Switch>
         </main>
+        <Footer />
     </div>
   );
 }
