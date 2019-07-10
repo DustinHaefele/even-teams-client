@@ -3,7 +3,6 @@
   width: 80%;
   margin-left: 10%;
   margin-top: 40px;
-
   background-color: rgba(255,254,255,.8);
   border: 1px solid black;
 }
@@ -11,6 +10,8 @@
 .main_header {
   margin-top: 0px;
   padding-top: 20px;
+  font-weight: 700;
+  
 }
 
 .sec_header{
@@ -46,7 +47,14 @@
     width: 54%;
     margin-left: 23%;
     margin-top: 40px;
+  }
 
+  .main_page h4 {
+    font-size: 18px;
+  }
+
+  .sec_header{
+    font-size: 20px;
   }
 
   .main_header {

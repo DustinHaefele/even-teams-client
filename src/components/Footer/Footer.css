@@ -4,7 +4,8 @@ footer p {
   bottom:0;
   left:0;
   right: 0;
-  font-size: 10px;
+  font-size: 12px;
   background-color: black;
   color: #fffeff;
+  padding: 2px 0;
 }

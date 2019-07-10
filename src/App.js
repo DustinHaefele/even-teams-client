@@ -1,15 +1,13 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom';
+import './App.css';
 import MainPage from './routes/MainPage/MainPage';
 import LoginPage from './routes/LoginPage/LoginPage';
 import RegistrationPage from './routes/RegistrationPage/RegistrationPage';
-//import CreateGroupPage from './routes/future_pages/CreateGroupPage/CreateGroupPage';
-//import AddPlayersPage from './routes/future_pages/AddPlayersPage/AddPlayersPage';
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage';
 import MyGroupsPage from './routes/MyGroupsPage/MyGroupsPage';
 import PublicRoute from './Routing/PublicRoute';
 import PrivateRoute from './Routing/PrivateRoute';
-import './App.css';
 import Header from './components/Header/Header';
 import MakeTeamsPage from './routes/MakeTeamsPage/MakeTeamsPage';
 import Footer from './components/Footer/Footer'
@@ -49,14 +47,6 @@ class App extends React.Component {
               path={'/register'}
               component={RegistrationPage}
             />
-            {/* <PrivateRoute
-              path={'/create-group'}
-              component={CreateGroupPage}
-            />
-            <PrivateRoute
-              path={'/add-players/:group_id'}
-              component={AddPlayersPage}
-            /> These routes can be added in the future*/}
             <PrivateRoute 
               path={'/groups/:user_id'}
               component={MyGroupsPage}

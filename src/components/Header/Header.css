@@ -4,10 +4,13 @@
   align-items: center;
   justify-content: space-between;
   background-color: #465362;
+  font-family: 'Lato', sans-serif;
 }
 
 .Header h1 {
   margin: 0 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
 }
 
 .Header a {

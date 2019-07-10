@@ -65,7 +65,7 @@ export default class SingleGroupPage extends React.Component {
     return (
       <div>
         {/*get the group name and put it here*/}
-        <h2>{this.state.groupName}</h2>
+        <h2 className='team-name'>{this.state.groupName}</h2>
         <section className='all-players-section'>
           <h3 className='all-players-header'>All Players</h3>
           <ul className="all-players">{this.renderPlayersList()}</ul>

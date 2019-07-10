@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,700i|Titillium+Web:600,700,700i&display=swap');
 .App {
   text-align: center;
   box-sizing: border-box;
   background-image: url('./volleyMobilejpg.jpg');
   background-size: cover;
   min-height: 800px;
+  font-family: 'Titillium Web', sans-serif;
+  padding-bottom: 35px;
+
 }
 
 .App-logo {
