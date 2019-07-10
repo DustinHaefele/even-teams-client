@@ -4,8 +4,8 @@
   width: 80%;
   margin-left: 10%;
   border-radius: 20px;
-  background-color:rgba(70,83,98,.8);
-  color: #fffeff;
+  background-color:rgba(255,255,255,.8);
+  color: #02111B;
   box-shadow: 0 5px 20px rgba(0,0,0, .8); 
 }
 
@@ -19,18 +19,18 @@
 }
 
 .groups-list li{
+
   padding: 7px 0;
   width: 95%;
   margin-left: 2%;
   margin-bottom: 5px;
-  border: 1px solid black;
-  background-color: rgba(1,25,54,.9);
-  color: #fffeff;
+  border: .5px solid #282C34;
+  background-color: rgba(0,159,183,.2);
   border-radius: 10px;
 }
 
 .groups-list a:nth-child(2n) li{
-  background-color: rgba(2,17,27,.9);
+  background-color: rgba(218,255,239,.4);
 }
 
 .groups-list li:hover {
@@ -49,13 +49,14 @@
 .create-group-button {
   padding: 10px 10px;
   border: .5px solid lightgray;
-  background-color: white;
-  margin: 10px 0;
-  border-radius: 10px;
+  background-color: #fffeff;
+  margin: 10px 10px 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0, .6); 
 }
 
 .create-group-button:hover {
-  border: .5px solid #EEC643;
+  box-shadow: 0 5px 5px rgba(255,255,255, .6); 
 }
 
 .group-form {

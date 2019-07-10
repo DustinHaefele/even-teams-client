@@ -23,8 +23,8 @@
 }
 
 .Header__not-logged-in a:last-child {
-  background: #488286;
-  color: white;
+  background: #fffeff;
+  color: #02111B;
   padding: 5px 15px;
   border-radius: 15px;
   margin-left: 10px;

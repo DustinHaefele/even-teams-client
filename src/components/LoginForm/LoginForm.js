@@ -1,6 +1,7 @@
 import React from 'react';
 import config from '../../config';
 import TokenService from '../../services/token-services';
+import './LoginForm.css';
 
 export default class LoginForm extends React.Component {
 
