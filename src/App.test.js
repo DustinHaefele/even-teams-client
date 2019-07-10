@@ -15,10 +15,12 @@ import PlayerForm from './components/PlayerForm/PlayerForm';
 import RegistrationForm from './components/RegisterForm/RegisterForm';
 import Teams from './components/Teams/Teams';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faVolleyballBall } from '@fortawesome/free-solid-svg-icons';
+import { faVolleyballBall, faTrashAlt, faEdit} from '@fortawesome/free-solid-svg-icons';
 
 library.add (
   faVolleyballBall,
+  faTrashAlt,
+  faEdit
 )
 
 describe('Page smoke tests', () =>{
