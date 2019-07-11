@@ -40,21 +40,10 @@
 }
 
 @media screen and (min-width: 450px) {
-  .Header {
-    align-items: baseline;
-  }
+ 
 
   .Header h1 {
     font-size: 22pt;
   }
 }
 
-/* @media screen and (max-width: 490px) {
-  .Header__tagline--wide {
-    display: none;
-  }
-
-  .Header__tagline--narrow {
-    display: inherit;
-  }
-} */
