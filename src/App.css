@@ -2,7 +2,7 @@
 .App {
   text-align: center;
   box-sizing: border-box;
-  background-image: url('./volleyMobilejpg.jpg');
+  background-image: url('./volleyMobiletiny.jpg');
   background-size: cover;
   min-height: 800px;
   font-family: 'Titillium Web', sans-serif;
@@ -41,7 +41,7 @@
 
 @media screen and (min-width: 480px) {
   .App {
-    background-image: url('./volleyball2.jpg');
+    background-image: url('./volleyball2tiny.jpg');
     background-size: cover;
   }
 }
