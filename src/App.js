@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 import MainPage from './routes/MainPage/MainPage';
 import LoginPage from './routes/LoginPage/LoginPage';
@@ -10,60 +10,53 @@ import PublicRoute from './Routing/PublicRoute';
 import PrivateRoute from './Routing/PrivateRoute';
 import Header from './components/Header/Header';
 import MakeTeamsPage from './routes/MakeTeamsPage/MakeTeamsPage';
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/Footer';
 
 class App extends React.Component {
-  state = {hasError: false};
+  state = { hasError: false };
 
   handleLogin = () => {
     this.forceUpdate();
-  }
+  };
 
   static getDerivedStateFromError(error) {
-    console.error(error)
-    return { hasError: true }
+    console.error(error);
+    return { hasError: true };
   }
 
   render() {
-  return (
-    <div className="App">
-      <header className="App__header">
-        <Header />
-      </header>
-      <main>
-      {this.state.hasError && <p className='red'>Sorry, something went wrong!</p>}
+    return (
+      <div className="App">
+        <header className="App__header">
+          <Header />
+        </header>
+        <main>
+          {this.state.hasError && (
+            <p className="red">Sorry, something went wrong!</p>
+          )}
           <Switch>
-            <Route
-              exact
-              path={'/'}
-              component={MainPage}
-            />
+            <Route exact path={'/'} component={MainPage} />
             <PublicRoute
               path={'/login'}
               component={LoginPage}
-              onLogin = {this.handleLogin}
+              onLogin={this.handleLogin}
             />
-             <PublicRoute
-              path={'/register'}
-              component={RegistrationPage}
-            />
-            <PrivateRoute 
-              path={'/groups/:user_id'}
-              component={MyGroupsPage}
-            />
-            <PrivateRoute 
+            <PublicRoute path={'/register'} component={RegistrationPage} />
+            <PrivateRoute path={'/groups/:user_id'} component={MyGroupsPage} />
+            <PrivateRoute
               path={'/maketeams/:group_id'}
               component={MakeTeamsPage}
             />
-            <Route
-              component={NotFoundPage}
-            /> 
+            <Route component={NotFoundPage} />
           </Switch>
         </main>
-        <Footer />
-    </div>
-  );
-}
+        {/* <Footer /> */}
+        <footer>
+          <p>Created by Dustin Haefele. For the love of the game.</p>
+        </footer>
+      </div>
+    );
+  }
 }
 
 export default App;

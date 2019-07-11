@@ -45,6 +45,7 @@ export default class PlayerForm extends React.Component {
           <input
             required
             className="player_name"
+            id='player_name'
             name="player_name"
             type="text"
             placeholder="New Player Name"
@@ -52,7 +53,7 @@ export default class PlayerForm extends React.Component {
         </div>
         <div className="form-input-section">
           <label htmlFor="player_skill">Skill Level</label>
-          <select required className="player_skill" name="player_skill">
+          <select required className="player_skill" id='player_skill' name="player_skill">
             <option value={1}>1 - worst</option>
             <option value={2}>2</option>
             <option value={3}>3</option>

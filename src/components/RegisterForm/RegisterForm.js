@@ -54,19 +54,19 @@ export default class RegisterForm extends React.Component {
       <form onSubmit={this.handleSubmitRegistration}>
         <div className='form-input-section'>
           <label htmlFor='user_name'>User Name</label>
-          <input required className = 'register-user-name' name='user_name' placeholder='i.e. Headmaster1'></input>
+          <input required className = 'register-user-name' id='user_name' name='user_name' placeholder='i.e. Headmaster1'></input>
        </div>
         <div className='form-input-section'>
           <label htmlFor='full_name'>Full Name</label>
-          <input required className = 'register-full-name' name='full_name' placeholder='i.e. Albus Dumbledor'></input>
+          <input required className = 'register-full-name' id='full_name' name='full_name' placeholder='i.e. Albus Dumbledor'></input>
         </div>
         <div className='form-input-section'>
           <label htmlFor='password'>Password</label>
-          <input required className = 'register-password' name='password' placeholder='Pick a password'></input>
+          <input required className = 'register-password' id='password' name='password' placeholder='Pick a password'></input>
         </div>
         <div className='form-input-section'>
           <label htmlFor='repeat_password'>Re-type Password</label>
-          <input required className = 'register-password' name='repeat_password' placeholder='Re-type that password'></input>
+          <input required className = 'register-password'id='repeat_password' name='repeat_password' placeholder='Re-type that password'></input>
         </div>
         <div className='button-div'>
          <button type='submit' className='register-button'>Register</button>

@@ -10,7 +10,7 @@
   background-color: rgba(2,17,27,.8);
 }
 
-.all-players-header {
+.all-players-header, .all-players-subheader {
   color: #02111B;
   padding-top: 15px;
 }

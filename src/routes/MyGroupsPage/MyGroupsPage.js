@@ -66,6 +66,7 @@ export default class MyGroupPage extends React.Component {
     return (
       <div className='groups-page'>
         <h2 className='group-header'>{TokenService.getUserNameFromToken()}'s Groups</h2>
+        <h4>This is your groups page.  If you haven't been here before you can start by creating your first group!  Once your group is created it will show up on your screen, and all you need to do is click on it!</h4>
         {this.state.error && <p>{this.state.error}</p>} {/*Add button here to navigate to your own page */}
         <ul className='groups-list'>
           {this.renderMyGroups()}
