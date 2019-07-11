@@ -1,5 +1,7 @@
 
 .player {
+  display: flex;
+  justify-content: space-between;
   border: 1px solid black;
   margin-bottom: 5px;
   padding: 5px 5px;
@@ -49,6 +51,10 @@
 
 .teams-page-buttons:hover {
   box-shadow: 0 5px 10px rgba(255,255,255, .8);
+}
+
+.delete{
+  text-align: right;
 }
 
 @media screen and (min-width: 480px) {

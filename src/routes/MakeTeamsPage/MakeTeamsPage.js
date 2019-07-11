@@ -5,6 +5,7 @@ import SplitTeamsService from '../../services/split-teams-service';
 import Teams from '../../components/Teams/Teams';
 import './MakeTeamsPage.css';
 import GroupApiService from '../../services/group-api-service';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class SingleGroupPage extends React.Component {
   state = {
@@ -26,6 +27,17 @@ export default class SingleGroupPage extends React.Component {
     const teams = SplitTeamsService.handleCreateTeams(this.state.allPlayers);
     this.setState(teams);
   };
+
+  handleClickDelete = id =>{
+    const group_id = this.props.match.params.group_id;
+    const remainingPlayers = this.state.allPlayers.filter(player => player.id !== id);
+    playerApiService.deletePlayerFromGroup(group_id, id)
+      .then(()=>{
+        this.setState({
+          allPlayers: remainingPlayers,
+        })
+      });
+  }
 
   componentDidMount() {
     const group_id = this.props.match.params.group_id;
@@ -55,7 +67,7 @@ export default class SingleGroupPage extends React.Component {
 
   renderPlayersList = () => {
     const allPlayersArray = this.state.allPlayers.map(player => {
-      return <li className='player' key={player.id}>{player.player_name}</li>;
+      return <li className='player' key={player.id}><span>{player.player_name}</span> <div onClick={()=>this.handleClickDelete(player.id)}><FontAwesomeIcon  className='delete' icon='trash-alt' /></div></li>;
     });
     return allPlayersArray;
   };

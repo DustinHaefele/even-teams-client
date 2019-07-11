@@ -31,6 +31,22 @@ const playerApiService = {
       return res.json();
     });
   },
+
+  deletePlayerFromGroup(group_id, player_id) {
+    return fetch(`${config.API_ENDPOINT}/players/${group_id}/${player_id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
+      },
+    })
+      .then(res=>{
+      if(!res.ok){
+        return res.json().then(e=>Promise.reject(e))
+      }
+      return null;
+    });
+  },
 }
 
 export default playerApiService;
