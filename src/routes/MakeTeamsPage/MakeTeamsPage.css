@@ -15,6 +15,14 @@
   padding-top: 15px;
 }
 
+.icon-button {
+  margin: 0 0;
+  padding: 0 0;
+  background-color: rgba(255,255,255, 0);
+  border: none; 
+  color: #fffeff;
+}
+
 .all-players {
   display: flex;
   justify-content: space-around;
