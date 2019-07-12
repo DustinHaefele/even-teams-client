@@ -50,8 +50,10 @@ export default class RegisterForm extends React.Component {
   
 
   render() {
+    const {error} = this.state;
     return (
       <form onSubmit={this.handleSubmitRegistration}>
+        <div className='error-message'>{error && <p>{error}</p>}</div>
         <div className='form-input-section'>
           <label htmlFor='user_name'>User Name</label>
           <input required className = 'register-user-name' id='user_name' name='user_name' placeholder='i.e. Headmaster1'></input>

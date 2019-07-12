@@ -28,6 +28,7 @@
 
 .register-button:hover {
   box-shadow: 0 5px 5px rgba(255,255,255, .6);
+  cursor: pointer;
 }
 
 .registration-page form {

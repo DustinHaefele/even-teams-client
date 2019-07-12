@@ -67,7 +67,7 @@ export default class SingleGroupPage extends React.Component {
 
   renderPlayersList = () => {
     const allPlayersArray = this.state.allPlayers.map(player => {
-      return <li className='player' key={player.id}><span>{player.player_name}</span> <button type='delete' className='icon-button' onClick={()=>this.handleClickDelete(player.id)}><FontAwesomeIcon  className='delete' icon='trash-alt' /></button></li>;
+      return <li className='player' key={player.id}><span>{player.player_name}</span> <button aria-label='delete icon' type='delete' className='icon-button' onClick={()=>this.handleClickDelete(player.id)}><FontAwesomeIcon  className='delete' icon='trash-alt' /></button></li>;
     });
     return allPlayersArray;
   };

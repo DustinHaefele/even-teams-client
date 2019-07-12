@@ -32,7 +32,7 @@ export default class LoginForm extends React.Component {
       TokenService.saveAuthToken(res.authToken);
       const user_id = TokenService.getUserIdFromToken();
       this.props.handleLoginSuccess(user_id);
-    }).catch(err=>{this.setState({error: err})
+    }).catch(err=>{this.setState({error: err.error})
     });
   };
 
