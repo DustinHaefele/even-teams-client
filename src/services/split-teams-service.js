@@ -1,6 +1,9 @@
 
  const splitTeamsService = {
 
+  //This function is creating a Thue-Morse sequence based on the number of players.
+  //This sequence has been determined to be the most fair pick order mathmatically.
+  
   handleCreateSequence(numOfPlayers) {
     const n = Math.floor((Math.log(numOfPlayers) / Math.log(2)+1));
 
@@ -65,7 +68,7 @@
     console.log(level4);
     console.log(level5);
 
-    //Shuffle your Arrays to randomize teams
+    //Shuffle your Arrays to randomize teams. We randomize so it isn't just split on order players entered.
     level1 = this.shuffle(level1);
     level2 = this.shuffle(level2);
     level3 = this.shuffle(level3);

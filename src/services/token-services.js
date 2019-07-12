@@ -13,15 +13,14 @@ const TokenService = {
   hasAuthToken() {
     return !!TokenService.getAuthToken();
   },
-
+//These next two functions allow us to grab the user_id and user_name
+//from token for use in display and navigation.
   getUserIdFromToken() {
     const token = this.getAuthToken();
     const codedUser = token.split('.')[1];
     const payload = window.atob(codedUser)
     const parsedPayload = JSON.parse(payload) 
-
     return parsedPayload.user_id;
-
   },
 
   getUserNameFromToken() {
@@ -29,7 +28,6 @@ const TokenService = {
     const codedUser = token.split('.')[1];
     const payload = window.atob(codedUser)
     const parsedPayload = JSON.parse(payload) 
-
     return parsedPayload.sub;
   },
 

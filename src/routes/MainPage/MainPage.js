@@ -32,10 +32,7 @@ function MainPage () {
           </Link>
         </div>)}
      
-        {/* Once you are logged in you can create a group.  
-        Your group is where you add all of your players whe will be playing in the game.  
-        Next add all of your players to the group by telling us their name and giving them a skill level. 
-        Then let us do the work of creating the most even teams possible.</p> */}
+        {!TokenService.hasAuthToken() ? (<p>If you want to try this out before registering just login with the username 'HarryPotter' and the password 'Password1!'</p>): <></>}
     </div>
   );
 }

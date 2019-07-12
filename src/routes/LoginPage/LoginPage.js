@@ -14,7 +14,6 @@ export default class LoginPage extends React.Component {
     const { history } = this.props
     this.props.onLogin();
     history.push(`/groups/${user_id}`)
-    
   }
 
   render() {
