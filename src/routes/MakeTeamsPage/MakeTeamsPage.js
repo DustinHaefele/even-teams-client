@@ -49,7 +49,7 @@ export default class SingleGroupPage extends React.Component {
           allPlayers
         });
       })
-      .catch(error => this.setState({ error }));
+      .catch(err => this.setState({ error: err.error }));
 
     GroupApiService.getGroupNameFromGroupId(this.props.match.params.group_id).then(groupName => {
       this.setState({groupName})
