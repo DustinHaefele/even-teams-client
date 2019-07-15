@@ -43,13 +43,15 @@ export default class Header extends Component {
   render() {
     return <>
       <nav className='Header'>
-        <h1>
-          <Link to='/'>
+        
+          <Link aria-label='Even-Teams Home Page' to='/'>
+          <h1>
           <FontAwesomeIcon className='green' icon='volleyball-ball' />
             {' '}
           Even-Teams
+          </h1>
           </Link>
-        </h1>
+        
           {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

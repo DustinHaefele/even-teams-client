@@ -5,6 +5,7 @@ import SplitTeamsService from '../../services/split-teams-service';
 import Teams from '../../components/Teams/Teams';
 import './MakeTeamsPage.css';
 import GroupApiService from '../../services/group-api-service';
+import TokenService from '../../services/token-services';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class SingleGroupPage extends React.Component {
@@ -92,6 +93,7 @@ export default class SingleGroupPage extends React.Component {
         ) :(<div className = 'team-button-div'>
               <button className='teams-page-buttons' onClick={this.toggleAddPlayer}>Add New Player</button>
               <button className='teams-page-buttons' onClick={this.handleSplitTeams}>Make Even Teams</button>
+              <button className='teams-page-buttons' onClick={()=> this.props.history.push(`/groups/${TokenService.getUserIdFromToken()}`)}>Go Back To My Groups</button>
             </div>)
           }
           {this.state.teamOne.length > 0 && (
