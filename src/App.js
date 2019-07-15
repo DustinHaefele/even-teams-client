@@ -10,7 +10,7 @@ import PublicRoute from './Routing/PublicRoute';
 import PrivateRoute from './Routing/PrivateRoute';
 import Header from './components/Header/Header';
 import MakeTeamsPage from './routes/MakeTeamsPage/MakeTeamsPage';
-import Footer from './components/Footer/Footer';
+
 
 class App extends React.Component {
   state = { hasError: false };
@@ -50,9 +50,8 @@ class App extends React.Component {
             <Route component={NotFoundPage} />
           </Switch>
         </main>
-        {/* <Footer /> */}
         <footer>
-          <p>Created by Dustin Haefele. For the love of the game.</p>
+          <p>Created by Dustin Haefele. For the love of the game, and wednesday night volleyball.</p>
         </footer>
       </div>
     );
