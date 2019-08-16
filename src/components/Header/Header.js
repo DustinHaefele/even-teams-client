@@ -46,7 +46,7 @@ export default class Header extends Component {
         
           <Link aria-label='Even-Teams Home Page' to='/'>
           <h1>
-          <FontAwesomeIcon className='green' icon='volleyball-ball' />
+          <FontAwesomeIcon icon='volleyball-ball' />
             {' '}
           Even-Teams
           </h1>

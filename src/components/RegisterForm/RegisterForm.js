@@ -1,6 +1,7 @@
 import React from 'react';
 import config from '../../config';
 import TokenService from '../../services/token-services';
+import Spinner from '../Spinner/Spinner';
 
 export default class RegisterForm extends React.Component {
   static defaultProps = {
@@ -8,11 +9,13 @@ export default class RegisterForm extends React.Component {
   };
 
   state = {
-    error: null
+    error: null,
+    fetching: false,
   };
 
   handleSubmitRegistration = ev => {
     ev.preventDefault();
+    this.setState({error: null, fetching: true});
     const { repeat_password, full_name, user_name, password } = ev.target;
     const user = {
       full_name: full_name.value,
@@ -55,56 +58,59 @@ export default class RegisterForm extends React.Component {
   render() {
     const { error } = this.state;
     return (
-      <form onSubmit={this.handleSubmitRegistration}>
-        <div className="error-message">{error && <p>{error}</p>}</div>
-        <div className="form-input-section">
-          <label htmlFor="user_name">User Name</label>
-          <input
-            required
-            className="register-user-name"
-            id="user_name"
-            name="user_name"
-            placeholder="i.e. Headmaster1"
-          />
-        </div>
-        <div className="form-input-section">
-          <label htmlFor="full_name">Full Name</label>
-          <input
-            required
-            className="register-full-name"
-            id="full_name"
-            name="full_name"
-            placeholder="i.e. Albus Dumbledor"
-          />
-        </div>
-        <div className="form-input-section">
-          <label htmlFor="password">Password</label>
-          <input
-            required
-            type="password"
-            className="register-password"
-            id="password"
-            name="password"
-            placeholder="Pick a password"
-          />
-        </div>
-        <div className="form-input-section">
-          <label htmlFor="repeat_password">Re-type Password</label>
-          <input
-            required
-            type="password"
-            className="register-password"
-            id="repeat_password"
-            name="repeat_password"
-            placeholder="Re-type that password"
-          />
-        </div>
-        <div className="button-div">
-          <button type="submit" className="register-button">
-            Register
-          </button>
-        </div>
-      </form>
+      <div>
+        {this.state.fetching && !this.state.error && <Spinner />}
+        <form onSubmit={this.handleSubmitRegistration}>
+          <div className="error-message">{error && <p>{error}</p>}</div>
+          <div className="form-input-section">
+            <label htmlFor="user_name">User Name</label>
+            <input
+              required
+              className="register-user-name"
+              id="user_name"
+              name="user_name"
+              placeholder="i.e. Headmaster1"
+            />
+          </div>
+          <div className="form-input-section">
+            <label htmlFor="full_name">Full Name</label>
+            <input
+              required
+              className="register-full-name"
+              id="full_name"
+              name="full_name"
+              placeholder="i.e. Albus Dumbledor"
+            />
+          </div>
+          <div className="form-input-section">
+            <label htmlFor="password">Password</label>
+            <input
+              required
+              type="password"
+              className="register-password"
+              id="password"
+              name="password"
+              placeholder="Pick a password"
+            />
+          </div>
+          <div className="form-input-section">
+            <label htmlFor="repeat_password">Re-type Password</label>
+            <input
+              required
+              type="password"
+              className="register-password"
+              id="repeat_password"
+              name="repeat_password"
+              placeholder="Re-type that password"
+            />
+          </div>
+          <div className="button-div">
+            <button type="submit" className="register-button">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

@@ -2,17 +2,18 @@ import React from 'react';
 import config from '../../config';
 import TokenService from '../../services/token-services';
 import './LoginForm.css';
+import Spinner from '../Spinner/Spinner';
 
 export default class LoginForm extends React.Component {
 
 
-  state = { error: null }
+  state = { error: null, fetching: false }
 
   handleSubmitJwtAuth = ev => {
     ev.preventDefault()
-    this.setState({error:null});
+    this.setState({error:null, fetching: true});
     const { user_name, password } = ev.target
-
+   
     fetch(`${config.API_ENDPOINT}/login`, {
       method:'POST',
       headers: {
@@ -39,6 +40,8 @@ export default class LoginForm extends React.Component {
   render() {
     const {error} = this.state;
     return (
+      <div>
+      {this.state.fetching && !this.state.error && <Spinner />}
       <form onSubmit={this.handleSubmitJwtAuth}>
         <div className='error-message'>{error && <p>{error}</p>}</div>
         <div className='form-input-section'>
@@ -53,6 +56,7 @@ export default class LoginForm extends React.Component {
           <button className='login-button' type='submit'>Log in</button>
         </div>
       </form>
+      </div>
     )
   }
 }

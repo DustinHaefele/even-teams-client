@@ -8,7 +8,6 @@ import MakeTeamsPage from './routes/MakeTeamsPage/MakeTeamsPage'
 import RegistrationPage from './routes/RegistrationPage/RegistrationPage'
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage'
 import CreateGroupForm from './components/CreateGroupForm/CreateGroupForm'
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import LoginForm from './components/LoginForm/LoginForm';
 import PlayerForm from './components/PlayerForm/PlayerForm';
@@ -65,12 +64,6 @@ describe('Component smoke tests', () =>{
   it('renders CreateGroupForm without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<BrowserRouter><CreateGroupForm /></BrowserRouter>, div);
-    ReactDOM.unmountComponentAtNode(div);
-  });
-
-  it('renders Footer without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<BrowserRouter><Footer /></BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
