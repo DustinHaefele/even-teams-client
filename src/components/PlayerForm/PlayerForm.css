@@ -19,13 +19,13 @@
 
 .player-form { 
   width: 80%;
-  margin: 20px 5%;
+  margin: 40px 5%;
   text-align: left;
   box-shadow: 0 5px 20px rgba(0,0,0, .8); 
   width: 90%;
 
   border-radius: 20px;
-  background-color:rgba(255,255,255,.8);
+  background-color:rgba(255,255,255);
 }
 
 .player-form h3 {
