@@ -1,4 +1,8 @@
 
+.group-name {
+ padding: 35px 0 35px 0;
+}
+
 .player {
   display: flex;
   justify-content: space-between;
@@ -13,6 +17,10 @@
 .all-players-header, .all-players-subheader {
   color: #02111B;
   padding-top: 15px;
+}
+
+.all-players-subheader {
+  font-size: 12px;
 }
 
 .icon-button {
@@ -77,7 +85,11 @@
     margin-left: 25%;
   }
 
-  .team-name {
+  .team-name, .group-name{
     font-size: 35px;
   }
+  .all-players-subheader {
+    font-size: 16px;
+  }
 }
+

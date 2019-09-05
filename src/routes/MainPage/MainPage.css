@@ -3,7 +3,7 @@
   width: 80%;
   margin-left: 10%;
   margin-top: 40px;
-  background-color: rgba(255,254,255,.8);
+  background-color: rgba(255,254,255);
   border: 1px solid black;
 }
 
@@ -15,7 +15,12 @@
 }
 
 .sec_header{
+  padding: 0 2%;
   font-size: 16px;
+}
+
+.sub-text {
+  padding: 0 2%;
 }
 
 .main_page a {

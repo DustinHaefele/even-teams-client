@@ -34,7 +34,7 @@ background-color: rgba(0,159,183,.2)
   box-shadow: 0 5px 20px rgba(0,0,0, .8); 
 }
 
-.team-name{
+.team-name, .group-name{
   font-size: 25px;
 }
 
