@@ -44,7 +44,8 @@ export default class SingleGroupPage extends React.Component {
     const group_id = this.props.match.params.group_id;
     playerApiService
       .getPlayersByGroupId(group_id)
-      .then(allPlayers => {
+      .then(players => {
+        const allPlayers = players.map(player => { return {present: true, ...player}});
         this.setState({
           allPlayers
         });

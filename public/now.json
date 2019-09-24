@@ -1,7 +1,7 @@
 {
   "version": 2,
   "alias": "eventeams",
-  "name": "even-teams",
+  "name": "eventeams",
   "routes": [
       {
         "src": "^/static/(.*)",
