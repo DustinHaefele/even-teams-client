@@ -71,6 +71,9 @@ export default class SingleGroupPage extends React.Component {
     const allPlayers = this.state.allPlayers;
     allPlayers[idx].present = !allPlayers[idx].present;
     this.setState({ allPlayers });
+    if (this.state.teamOne.length > 0) {
+      this.handleSplitTeams();
+    }
   }
 
   renderPlayersList = () => {
