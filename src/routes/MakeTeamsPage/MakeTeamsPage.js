@@ -44,7 +44,8 @@ export default class SingleGroupPage extends React.Component {
     const group_id = this.props.match.params.group_id;
     playerApiService
       .getPlayersByGroupId(group_id)
-      .then(allPlayers => {
+      .then(players => {
+        const allPlayers = players.map(player => { return {present: true, ...player}});
         this.setState({
           allPlayers
         });
@@ -66,9 +67,20 @@ export default class SingleGroupPage extends React.Component {
     }
   };
 
+  togglePlayerPresent(idx) {
+    const allPlayers = this.state.allPlayers;
+    allPlayers[idx].present = !allPlayers[idx].present;
+    this.setState({ allPlayers });
+    if (this.state.teamOne.length > 0) {
+      this.handleSplitTeams();
+    }
+  }
+
   renderPlayersList = () => {
-    const allPlayersArray = this.state.allPlayers.map(player => {
-      return <li className='player' key={player.id}><span>{player.player_name}</span> <button aria-label='delete icon' type='delete' className='icon-button' onClick={()=>this.handleClickDelete(player.id)}><FontAwesomeIcon  className='delete' icon='trash-alt' /></button></li>;
+    
+    const allPlayersArray = this.state.allPlayers.map((player, idx) => {
+      const className =  player.present ? "player" : "player red"
+      return <li className={className} key={player.id} onClick={()=>this.togglePlayerPresent(idx)}><span>{player.player_name}</span> <button aria-label='delete icon' type='delete' className='icon-button' onClick={()=>this.handleClickDelete(player.id)}><FontAwesomeIcon  className='delete' icon='trash-alt' /></button></li>;
     });
     return allPlayersArray;
   };

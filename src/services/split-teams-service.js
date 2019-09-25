@@ -47,18 +47,18 @@
     let teamTwo = [];
 
     allPlayers.forEach(player => {
-      if (player.player_skill === 1) {
-        level1 = [...level1, player];
-      } else if (player.player_skill === 2) {
-        level2 = [...level2, player];
-      } else if (player.player_skill === 3){
-        level3 = [...level3, player];
-      }
-      else if (player.player_skill === 4){
-        level4 = [...level4, player];
-      }
-      else {
-        level5 = [...level5, player];
+      if(player.present) {
+        if (player.player_skill === 1) {
+          level1 = [...level1, player];
+        } else if (player.player_skill === 2) {
+          level2 = [...level2, player];
+        } else if (player.player_skill === 3){
+          level3 = [...level3, player];
+        } else if (player.player_skill === 4){
+          level4 = [...level4, player];
+        } else {
+          level5 = [...level5, player];
+        }
       }
     });
 
