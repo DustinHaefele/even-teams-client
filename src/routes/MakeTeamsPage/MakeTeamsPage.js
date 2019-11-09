@@ -58,7 +58,8 @@ export default class SingleGroupPage extends React.Component {
       
   }
 
-  addPlayer = newPlayer => {
+  addPlayer = player => {
+    const newPlayer = {present: true, ...player};
     this.setState({
       allPlayers: [...this.state.allPlayers, newPlayer]
     });
