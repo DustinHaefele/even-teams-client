@@ -3,8 +3,11 @@ import config from '../../config';
 
 export default class UserSearch extends React.Component {
 
-  handleSearch = searchTerm => {
-    return fetch(`${config.API_ENDPOINT}/users/user_name`, {method: 'GET', body: JSON.stringify({searchTerm})})
+  handleSearch = ev => {
+    ev.preventDefault();
+    const searchTerm = ev.target;
+    console.log(ev.target);
+     return fetch(`${config.API_ENDPOINT}/users/user_name`, {method: 'GET', body: JSON.stringify({ searchTerm })})
       .then(res => {
         if(!res.ok) {
           return res.json().then(e=> Promise.reject(e))
@@ -17,7 +20,7 @@ export default class UserSearch extends React.Component {
   render(){
 
     return (
-      <form onSubmit={this.handleSearch}>
+      <form onSubmit={()=>console.log(this.handleSearch())}>
         <input type='text' placeholder='Search Here' /> 
         <button type='submit'>Search</button>
       </form>
