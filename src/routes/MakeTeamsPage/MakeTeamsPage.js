@@ -1,6 +1,7 @@
 import React from 'react';
 import playerApiService from '../../services/player-api-service';
 import PlayerForm from '../../components/PlayerForm/PlayerForm';
+import UserSearch from '../../components/UserSearch/UserSearch';
 import SplitTeamsService from '../../services/split-teams-service';
 import Teams from '../../components/Teams/Teams';
 import './MakeTeamsPage.css';
@@ -96,6 +97,8 @@ export default class SingleGroupPage extends React.Component {
           <ul className="all-players">{this.renderPlayersList()}</ul>
         </section>
         
+        <UserSearch />
+
         {this.state.addPlayer ? (
           <PlayerForm
             toggleForm={this.toggleAddPlayer}
