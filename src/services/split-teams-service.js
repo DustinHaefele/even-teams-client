@@ -62,11 +62,6 @@
       }
     });
 
-    console.log(level1);
-    console.log(level2);
-    console.log(level3);
-    console.log(level4);
-    console.log(level5);
 
     //Shuffle your Arrays to randomize teams. We randomize so it isn't just split on order players entered.
     level1 = this.shuffle(level1);

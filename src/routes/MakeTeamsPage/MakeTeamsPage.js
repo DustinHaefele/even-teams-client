@@ -96,7 +96,7 @@ export default class SingleGroupPage extends React.Component {
           <h4 className='all-players-subheader'>This is where you can use the group you created.  Add all the players you have and give them a skill level. Then just click the "make even teams" button and our algorithm will split the teams as evenly as mathmatically possible!  Later you can come back to this page and manage your group by deleting players or adding new ones!</h4>
           <ul className="all-players">{this.renderPlayersList()}</ul>
         </section>
-        
+
         {this.state.addPlayer ? (
           <PlayerForm
             toggleForm={this.toggleAddPlayer}

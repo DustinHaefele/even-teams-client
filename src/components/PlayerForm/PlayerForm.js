@@ -38,38 +38,43 @@ export default class PlayerForm extends React.Component {
 
   render() {
     return (
-      <form className='player-form' onSubmit={this.handleSubmit}>
-        {this.state.error && <p>{this.state.error}</p>}
-        <h3>Add New Player</h3>
-        <div className="form-input-section">
-          <label htmlFor="player_name">New Player Name</label>
-          <input
-            required
-            className="player_name"
-            id='player_name'
-            name="player_name"
-            type="text"
-            placeholder="New Player Name"
-          />
-        </div>
-        <div className="form-input-section">
-          <label htmlFor="player_skill">Skill Level</label>
-          <select required className="player_skill" id='player_skill' name="player_skill">
-            <option value={1}>1 - worst</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5 - best</option>
-          </select>
-        </div>
+        <form className="player-form" onSubmit={this.handleSubmit}>
+          {this.state.error && <p>{this.state.error}</p>}
+          <h3>Add New Player</h3>
+          <div className="form-input-section">
+            <label htmlFor="player_name">New Player Name</label>
+            <input
+              required
+              className="player_name"
+              id="player_name"
+              name="player_name"
+              type="text"
+              placeholder="New Player Name"
+            />
+          </div>
+          <div className="form-input-section">
+            <label htmlFor="player_skill">Skill Level</label>
+            <select
+              required
+              className="player_skill"
+              id="player_skill"
+              name="player_skill"
+            >
+              <option value={1}>1 - worst</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5 - best</option>
+            </select>
+          </div>
 
-        <button type="submit" className="button first-button">
-          Add This Player
-        </button>
-        <button onClick={this.props.toggleForm} className="button">
-          Cancel
-        </button>
-      </form>
+          <button type="submit" className="button first-button">
+            Add This Player
+          </button>
+          <button onClick={this.props.toggleForm} className="button">
+            Cancel
+          </button>
+        </form>
     );
   }
 }

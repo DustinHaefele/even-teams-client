@@ -47,6 +47,22 @@ const playerApiService = {
       return null;
     });
   },
+
+  findUserByName(searchTerm) {
+    return fetch(`${config.API_ENDPOINT}/users/user_name?searchTerm=${searchTerm}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`,
+        'content-type': 'application/json'
+      },
+    })
+      .then(res=>{
+      if(!res.ok){
+        return res.json().then(e=>Promise.reject(e))
+      }
+      return res.json();
+    });
+  },
 }
 
 export default playerApiService;
