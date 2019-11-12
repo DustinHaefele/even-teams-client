@@ -1,6 +1,5 @@
 import React from 'react';
 import './PlayerForm.css';
-import UserSearch from '../UserSearch/UserSearch';
 import playerApiService from '../../services/player-api-service';
 
 export default class PlayerForm extends React.Component {
@@ -38,8 +37,6 @@ export default class PlayerForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <UserSearch />
         <form className="player-form" onSubmit={this.handleSubmit}>
           {this.state.error && <p>{this.state.error}</p>}
           <h3>Add New Player</h3>
@@ -77,7 +74,6 @@ export default class PlayerForm extends React.Component {
             Cancel
           </button>
         </form>
-      </div>
     );
   }
 }
