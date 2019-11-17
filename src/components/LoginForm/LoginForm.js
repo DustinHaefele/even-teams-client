@@ -53,7 +53,7 @@ export default class LoginForm extends React.Component {
           <input required type='password' className ='login_password' id='password' name='password' placeholder='Password'></input>
         </div>
         <div className='button-div'>
-          <button className='login-button' type='submit'>Log in</button>
+          <button className='button' type='submit'>Log in</button>
         </div>
       </form>
       </div>

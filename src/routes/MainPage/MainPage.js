@@ -21,12 +21,12 @@ function MainPage () {
           </Link>
           </div>)
           : (<div className='Main__not-logged-in'>
-          <Link className = 'main-login'
+          <Link className = 'button'
             to='/login'>
             Login
             {' '}
           </Link>
-          <Link className = 'main-register'
+          <Link className = 'button'
             to='/register'>
             Register
           </Link>

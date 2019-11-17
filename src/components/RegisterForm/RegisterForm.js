@@ -105,7 +105,7 @@ export default class RegisterForm extends React.Component {
             />
           </div>
           <div className="button-div">
-            <button type="submit" className="register-button">
+            <button type="submit" className="button">
               Register
             </button>
           </div>
