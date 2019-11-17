@@ -71,6 +71,9 @@ export default class PlayerForm extends React.Component {
           <button type="submit" className="button first-button">
             Add This Player
           </button>
+          <button className="button">
+            Add Even-Teams User
+          </button>
           <button onClick={this.props.toggleForm} className="button">
             Cancel
           </button>
