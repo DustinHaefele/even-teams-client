@@ -1,6 +1,6 @@
 .Header {
   height: 40px;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100vw;
   display: flex;

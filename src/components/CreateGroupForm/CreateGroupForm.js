@@ -38,8 +38,8 @@ export default class CreateGroupForm extends React.Component {
       <label htmlFor='group_name'>What do you want to name your group?</label>
       <input required className ='group-input' id='group_name' name='group_name' placeholder='i.e. Wednesday Night Volleyball' />
      </div>
-      <button className='create-group-button' type='submit'>Submit New Group</button>
-      <button className='create-group-button' onClick={this.props.toggleForm}>Cancel</button>
+      <button className='button' type='submit'>Submit New Group</button>
+      <button className='button' onClick={this.props.toggleForm}>Cancel</button>
     </form>
     );
   };
