@@ -67,8 +67,10 @@
 }
 
 .teams-page-buttons {
-  padding: 10px 10px;
-  border: .5px solid lightgray;
+  padding: 15px 20px;
+  border: .75px solid black;
+  font-size: 16px;
+  font-weight: 700;
   background-color: #fffeff;
   margin: 10px 0;
   border-radius: 10px;
