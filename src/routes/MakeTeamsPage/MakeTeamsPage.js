@@ -3,6 +3,7 @@ import playerApiService from '../../services/player-api-service';
 import PlayerForm from '../../components/PlayerForm/PlayerForm';
 import SplitTeamsService from '../../services/split-teams-service';
 import Teams from '../../components/Teams/Teams';
+import UserList from '../../components/UserList/UserList';
 import './MakeTeamsPage.css';
 import GroupApiService from '../../services/group-api-service';
 import TokenService from '../../services/token-services';
@@ -17,8 +18,6 @@ export default class SingleGroupPage extends React.Component {
     teamOne: [],
     teamTwo: []
   };
-
-  
 
   toggleAddPlayer = () => {
     this.setState({ addPlayer: !this.state.addPlayer });
@@ -95,6 +94,10 @@ export default class SingleGroupPage extends React.Component {
           <h3 className='all-players-header'>All Players</h3>
           <h4 className='all-players-subheader'>This is where you can use the group you created.  Add all the players you have and give them a skill level. Then just click the "make even teams" button and our algorithm will split the teams as evenly as mathmatically possible!  Later you can come back to this page and manage your group by deleting players or adding new ones!</h4>
           <ul className="all-players">{this.renderPlayersList()}</ul>
+        </section>
+
+        <section className='all-players-section'>
+          <UserList users={[{user_name: 'HarrpPotter', full_name: 'harry potter', id: 1},{user_name: 'Dustin', full_name: 'dustin haefele', id: 2}]} />
         </section>
 
         {this.state.addPlayer ? (

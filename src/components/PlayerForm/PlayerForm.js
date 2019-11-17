@@ -18,7 +18,6 @@ export default class PlayerForm extends React.Component {
       player_name: player_name.value,
       player_skill: player_skill.value,
       group_id: this.props.group_id,
-      
     };
 
     playerApiService
