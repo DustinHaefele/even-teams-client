@@ -30,7 +30,7 @@ class App extends React.Component {
         <header className="App__header">
           <Header />
         </header>
-        <main>
+        <main className='main-section'>
           {this.state.hasError && (
             <p className="red">Sorry, something went wrong!</p>
           )}
