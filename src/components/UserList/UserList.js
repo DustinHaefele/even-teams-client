@@ -4,7 +4,7 @@ import UserListItem from '../UserListItem/UserListItem';
 export default function UserList (props) {
 
   function displayUserList() {
-    return props.users.map(user =>  <UserListItem user={user} key={user.id}/>)
+    return props.users.map((user, idx) =>  <UserListItem user={user} key={idx}/>)
   } 
 
   return (

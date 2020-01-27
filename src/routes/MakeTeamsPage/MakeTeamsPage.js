@@ -3,7 +3,6 @@ import playerApiService from '../../services/player-api-service';
 import PlayerForm from '../../components/PlayerForm/PlayerForm';
 import SplitTeamsService from '../../services/split-teams-service';
 import Teams from '../../components/Teams/Teams';
-import UserList from '../../components/UserList/UserList';
 import './MakeTeamsPage.css';
 import GroupApiService from '../../services/group-api-service';
 import TokenService from '../../services/token-services';
