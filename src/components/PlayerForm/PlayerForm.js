@@ -1,13 +1,16 @@
 import React from 'react';
 import './PlayerForm.css';
+import UserSearch from '../UserSearch/UserSearch';
 import playerApiService from '../../services/player-api-service';
 
 export default class PlayerForm extends React.Component {
   static defaultProps = {
     toggleForm: () => {},
-    group_id: null
+    group_id: null,
+    
   };
   state = {
+    addUser: false,
     error: null
   };
 
@@ -35,9 +38,14 @@ export default class PlayerForm extends React.Component {
       });
   };
 
+  handleAddUser = () => {
+    this.setState({addUser: true});
+  }
+
   render() {
     return (
-        <form className="player-form" onSubmit={this.handleSubmit}>
+      <>
+        {!this.state.addUser ? <form className="player-form" onSubmit={this.handleSubmit}>
           {this.state.error && <p>{this.state.error}</p>}
           <h3>Add New Player</h3>
           <div className="form-input-section">
@@ -68,15 +76,16 @@ export default class PlayerForm extends React.Component {
           </div>
 
           <button type="submit" className="button first-button">
-            Add This Player
+            Add This Player 
           </button>
-          <button className="button">
-            Add Even-Teams User
+          <button className="button" onClick={()=> this.handleAddUser()}>
+            Add Another User Instead
           </button>
           <button onClick={this.props.toggleForm} className="button">
             Cancel
           </button>
-        </form>
+        </form> : <UserSearch />}
+      </>
     );
   }
 }

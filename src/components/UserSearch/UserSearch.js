@@ -16,7 +16,7 @@ export default class UserSearch extends React.Component {
   render(){
 
     return (
-      <form onSubmit={this.handleSearch}>
+      <form className='player-form' onSubmit={this.handleSearch}>
         <input type='text' id='search_term' name='search_term' placeholder='Search Here' /> 
         <button type='submit'>Search</button>
       </form>

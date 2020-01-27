@@ -97,7 +97,7 @@ export default class SingleGroupPage extends React.Component {
         </section>
 
         <section className='all-players-section'>
-          <UserList users={[{user_name: 'HarrpPotter', full_name: 'harry potter', id: 1},{user_name: 'Dustin', full_name: 'dustin haefele', id: 2}]} />
+          <UserList users={[{user_name: 'HarryPotter', full_name: 'harry potter', id: 1},{user_name: 'Dustin', full_name: 'dustin haefele', id: 2}]} />
         </section>
 
         {this.state.addPlayer ? (
