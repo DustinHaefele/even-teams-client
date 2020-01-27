@@ -4,6 +4,10 @@ import PlayerApiService from '../../services/player-api-service';
 
 export default class UserSearch extends React.Component {
 
+  state = {
+    usersFound: [],
+  }
+
   handleSearch = ev => {
     ev.preventDefault();
     const { search_term } = ev.target;

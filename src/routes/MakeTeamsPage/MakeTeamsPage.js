@@ -96,10 +96,6 @@ export default class SingleGroupPage extends React.Component {
           <ul className="all-players">{this.renderPlayersList()}</ul>
         </section>
 
-        <section className='all-players-section'>
-          <UserList users={[{user_name: 'HarryPotter', full_name: 'harry potter', id: 1},{user_name: 'Dustin', full_name: 'dustin haefele', id: 2}]} />
-        </section>
-
         {this.state.addPlayer ? (
           <PlayerForm
             toggleForm={this.toggleAddPlayer}
