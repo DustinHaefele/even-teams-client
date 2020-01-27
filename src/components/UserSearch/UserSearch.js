@@ -17,8 +17,14 @@ export default class UserSearch extends React.Component {
 
     return (
       <form className='player-form' onSubmit={this.handleSearch}>
-        <input type='text' id='search_term' name='search_term' placeholder='Search Here' /> 
-        <button type='submit'>Search</button>
+        <h3>Find Another User</h3>
+        <div className="form-input-section">
+          <input className="player_name" type='text' id='search_term' name='search_term' placeholder='Search Here' /> 
+        </div>
+        <button type='submit' className="button first-button">Search For User</button>
+        <button onClick={this.props.toggleForm} className="button">
+            Cancel
+          </button>
       </form>
     )
   }
