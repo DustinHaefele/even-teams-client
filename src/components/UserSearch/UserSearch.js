@@ -11,7 +11,6 @@ export default class UserSearch extends React.Component {
   handleSearch = ev => {
     ev.preventDefault();
     const { search_term } = ev.target;
-    console.log(search_term.value);
      return PlayerApiService
       .findUserByName(search_term.value).then(res=>this.setState({usersFound: res}));
       //need to look at this exact data and then render a list of users found.  Also need to post the user to the group

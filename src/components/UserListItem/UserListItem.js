@@ -51,7 +51,7 @@ export default class UserListItem extends React.Component {
         </div>
         <div className="user-info-div">
           {' '}
-          <button type="button" className="button first-button" onClick={()=> this.handleAddUser(this.props.user.full_name, 3, this.props.user.user_id)}>
+          <button type="button" className="button first-button" onClick={()=> this.handleAddUser(this.props.user.full_name, 3, this.props.user.id)}>
             Add This User
           </button>
         </div>
