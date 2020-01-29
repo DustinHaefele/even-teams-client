@@ -5,7 +5,7 @@ import './UserList.css';
 export default function UserList(props) {
   function displayUserList() {
     return props.users.map((user, idx) => (
-      <UserListItem user={user} key={idx} />
+      <UserListItem user={user} key={idx} toggleForm={props.toggleForm} addPlayer={props.addPlayer} group_id={props.group_id}/>
     ));
   }
 

@@ -19,6 +19,7 @@ export default class SingleGroupPage extends React.Component {
   };
 
   toggleAddPlayer = () => {
+    console.log('toggling')
     this.setState({ addPlayer: !this.state.addPlayer });
   };
 
@@ -57,6 +58,7 @@ export default class SingleGroupPage extends React.Component {
   }
 
   addPlayer = player => {
+    console.log('adding player')
     const newPlayer = {present: true, ...player};
     this.setState({
       allPlayers: [...this.state.allPlayers, newPlayer]

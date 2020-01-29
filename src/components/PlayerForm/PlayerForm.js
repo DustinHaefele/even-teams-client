@@ -84,7 +84,7 @@ export default class PlayerForm extends React.Component {
           <button onClick={this.props.toggleForm} className="button">
             Cancel
           </button>
-        </form> : <UserSearch toggleForm={this.props.toggleForm}/>}
+        </form> : <UserSearch toggleForm={this.props.toggleForm} addPlayer={this.props.addPlayer} group_id={this.props.group_id}/>}
       </>
     );
   }

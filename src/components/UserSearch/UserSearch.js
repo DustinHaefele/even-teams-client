@@ -19,7 +19,7 @@ export default class UserSearch extends React.Component {
 
   renderUsersFound() {
     return (
-      <UserList users={this.state.usersFound} />
+      <UserList users={this.state.usersFound} toggleForm={this.props.toggleForm} addPlayer={this.props.addPlayer} group_id={this.props.group_id}/>
     )
   }
 
