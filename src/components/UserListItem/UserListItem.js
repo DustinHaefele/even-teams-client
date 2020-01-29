@@ -1,13 +1,16 @@
 import React from 'react';
+import './UserListItem.css';
 
 export default function UserListItem(props) {
   return (
-    <li>
-      <h3>
-        {props.user.user_name}
-        <span>: {props.user.full_name}</span>
-      </h3>
-      <select
+    <li className="user-list-item">
+      <div className='user-info-div'>
+        <p>{props.user.user_name}</p>
+      </div>
+      <div className='user-info-div'>
+        <p>{props.user.full_name}</p>
+      </div>
+      <div className='user-info-div'><select
         required
         className="player_skill"
         id="player_skill"
@@ -18,13 +21,10 @@ export default function UserListItem(props) {
         <option value={3}>3</option>
         <option value={4}>4</option>
         <option value={5}>5 - best</option>
-      </select>
-      <button type="submit" className="button first-button">
-            Add This User
-      </button>
-          {/* <button onClick={this.props.toggleForm} className="button">
-            Cancel
-          </button> */}
+      </select></div>
+      <div className='user-info-div'> <button type="submit" className="button first-button">
+        Add This User
+      </button></div>
     </li>
   );
 }
