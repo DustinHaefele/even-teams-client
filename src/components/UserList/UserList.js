@@ -10,7 +10,7 @@ export default function UserList(props) {
   }
 
   return (
-    <section className='all-players-section'>
+    <section className='user-list-section'>
       <ul className='user-list'>
         <li className='user-list-item'>
           <div className='user-info-div'>
