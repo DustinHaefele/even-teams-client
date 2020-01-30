@@ -1,0 +1,12 @@
+.user-info-div {
+  color: black;
+  border: 1px solid black;
+  width: 20%;
+}
+
+.user-list-item {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  margin: 2px 10%;
+}

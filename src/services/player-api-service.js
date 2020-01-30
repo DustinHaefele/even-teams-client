@@ -47,7 +47,7 @@ const playerApiService = {
       return null;
     });
   },
-
+//Need to implement both searches here.
   findUserByName(searchTerm) {
     return fetch(`${config.API_ENDPOINT}/users/user_name?searchTerm=${searchTerm}`, {
       method: 'GET',
