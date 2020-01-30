@@ -3,8 +3,13 @@ import playerApiService from '../../services/player-api-service';
 import './UserListItem.css';
 
 export default class UserListItem extends React.Component {
+
+  state = {
+    skill: 1,
+  }
   
   handleAddUser = (player_name, player_skill, user_id) => {
+    console.log(player_skill);
     const player = {
       player_name,
       player_skill,
@@ -26,6 +31,11 @@ export default class UserListItem extends React.Component {
       });
   };
 
+  handleSkillChange = ev => {
+    console.log(ev.target.value);
+    this.setState({skill: ev.target.value}) 
+  }
+
   render() {
     return (
       <li className="user-list-item">
@@ -35,26 +45,27 @@ export default class UserListItem extends React.Component {
         <div className="user-info-div">
           <p>{this.props.user.full_name}</p>
         </div>
-        <div className="user-info-div">
-          <select
-            required
-            className="player_skill"
-            id="player_skill"
-            name="player_skill"
-          >
-            <option value={1}>1 - worst</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5 - best</option>
-          </select>
-        </div>
-        <div className="user-info-div">
-          {' '}
-          <button type="button" className="button first-button" onClick={()=> this.handleAddUser(this.props.user.full_name, 3, this.props.user.id)}>
-            Add This User
-          </button>
-        </div>
+          <div className="user-info-div">
+            <select
+              required
+              className="player_skill"
+              id="player_skill"
+              name="player_skill"
+              onChange={this.handleSkillChange}
+            >
+              <option value={1}>1 - worst</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5 - best</option>
+            </select>
+          </div>
+          <div className="user-info-div">
+            {' '}
+            <button type="button" className="button first-button" onClick={()=> this.handleAddUser(this.props.user.full_name, this.state.skill, this.props.user.id)}>
+              Add This User
+            </button>
+          </div>
       </li>
     );
   }
