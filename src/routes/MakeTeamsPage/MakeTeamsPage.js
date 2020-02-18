@@ -28,6 +28,11 @@ export default class SingleGroupPage extends React.Component {
     this.setState(teams);
   };
 
+  handleMakeRandomTeams = () => {
+    const teams = SplitTeamsService.handleCreateRandomTeams(this.state.allPlayers);
+    this.setState(teams);
+  }
+
   handleClickDelete = id =>{
     const group_id = this.props.match.params.group_id;
     const remainingPlayers = this.state.allPlayers.filter(player => player.id !== id);
@@ -37,7 +42,7 @@ export default class SingleGroupPage extends React.Component {
           allPlayers: remainingPlayers,
         })
       });
-  }
+  };
 
   componentDidMount() {
     const group_id = this.props.match.params.group_id;
