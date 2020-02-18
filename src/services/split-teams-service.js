@@ -37,6 +37,10 @@
     return array;
   },
 
+  handleCreateRandomTeams(allPlayers) {
+    return this.shuffle(allPlayers);
+  },
+
   handleCreateTeams(allPlayers) {
     let level1 = [];
     let level2 = [];
