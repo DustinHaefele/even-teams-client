@@ -4,7 +4,7 @@ import PlayerForm from '../../components/PlayerForm/PlayerForm';
 import SplitTeamsService from '../../services/split-teams-service';
 import Teams from '../../components/Teams/Teams';
 import './MakeTeamsPage.css';
-import GroupApiService from '../../services/group-api-service';
+import groupApiService from '../../services/group-api-service';
 import TokenService from '../../services/token-services';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -19,15 +19,18 @@ export default class SingleGroupPage extends React.Component {
     group_id: this.props.match.params.group_id
   };
 
+  //toggles a state change that either shows an add player form or hides it.
   toggleAddPlayer = () => {
     this.setState({ addPlayer: !this.state.addPlayer });
   };
 
+  //Creates Even teams using the algorithm in handle create teams
   handleSplitTeams = () => {
     const teams = SplitTeamsService.handleCreateTeams(this.state.allPlayers);
     this.setState(teams);
   };
 
+  //Splits teams in a completely random way
   handleMakeRandomTeams = () => {
     const teams = SplitTeamsService.handleCreateRandomTeams(
       this.state.allPlayers
@@ -35,12 +38,14 @@ export default class SingleGroupPage extends React.Component {
     this.setState(teams);
   };
 
+  //Deletes a player from the group
   handleClickDelete = id => {
-
+    //creates an array of all the players except the deleted one
     const remainingPlayers = this.state.allPlayers.filter(
       player => player.id !== id
     );
-
+    
+    //makes a delete call to the API to remove the player from the database as well
     playerApiService.deletePlayerFromGroup(this.state.group_id, id).then(() => {
       this.setState({
         allPlayers: remainingPlayers
@@ -48,12 +53,15 @@ export default class SingleGroupPage extends React.Component {
     });
   };
 
+  //Adds a present property to each player in the array and sets it as true.
+  //added this so that we can mark players as not being present without removing them from the database
   markAllPresent = players => {
-    let allPlayersPresent = players.map(player => {return {present: true, ...player}})
+    let allPlayersPresent = players.map(player => {return {present: true, ...player}});
     this.setState({allPlayers: allPlayersPresent});
 }
 
   componentDidMount() {
+    //Based on the group id we are making an API call to get all the players in that group
     playerApiService
       .getPlayersByGroupId(this.state.group_id)
       .then(players => {
@@ -61,13 +69,15 @@ export default class SingleGroupPage extends React.Component {
       })
       .catch(err => this.setState({ error: err.error }));
 
-    GroupApiService.getGroupNameFromGroupId(
+    //gets the group name from the database and sets it in state
+    groupApiService.getGroupNameFromGroupId(
       this.state.group_id
     ).then(groupName => {
       this.setState({ groupName });
     });
   }
 
+  //This adds a new player, and makes even teams if teams have already been created
   addPlayer = player => {
     const newPlayer = { present: true, ...player };
     this.setState({
@@ -78,6 +88,7 @@ export default class SingleGroupPage extends React.Component {
     }
   };
 
+  //This marks a player as present or absent and then makes new teams if they have been made already
   togglePlayerPresent(idx) {
     const allPlayers = this.state.allPlayers;
     allPlayers[idx].present = !allPlayers[idx].present;
@@ -87,6 +98,7 @@ export default class SingleGroupPage extends React.Component {
     }
   }
 
+  //Builds an array of all the players as <li> to be displayed
   renderPlayersList = () => {
     const allPlayersArray = this.state.allPlayers.map((player, idx) => {
       const className = player.present ? 'player' : 'player red';
@@ -96,7 +108,7 @@ export default class SingleGroupPage extends React.Component {
           key={player.id}
           onClick={() => this.togglePlayerPresent(idx)}
         >
-          <span>{player.player_name}</span>{' '}
+          <span>{player.player_name}</span>
           <button
             aria-label="delete icon"
             type="delete"
