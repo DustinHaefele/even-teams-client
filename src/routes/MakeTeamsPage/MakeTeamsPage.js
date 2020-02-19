@@ -19,7 +19,6 @@ export default class SingleGroupPage extends React.Component {
   };
 
   toggleAddPlayer = () => {
-    console.log('toggling')
     this.setState({ addPlayer: !this.state.addPlayer });
   };
 
