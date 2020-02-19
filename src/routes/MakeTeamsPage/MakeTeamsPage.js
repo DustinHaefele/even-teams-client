@@ -57,12 +57,6 @@ export default class SingleGroupPage extends React.Component {
     playerApiService
       .getPlayersByGroupId(this.state.group_id)
       .then(players => {
-        // const allPlayers = players.map(player => {
-        //   return { present: true, ...player };
-        // });
-        // this.setState({
-        //   allPlayers
-        // });
         this.markAllPresent(players);
       })
       .catch(err => this.setState({ error: err.error }));
