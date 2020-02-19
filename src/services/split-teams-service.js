@@ -37,6 +37,22 @@
     return array;
   },
 
+  handleCreateRandomTeams(allPlayers) {
+    let teamOne = [];
+    let teamTwo = [];
+    let shuffledPlayers = this.shuffle(allPlayers);
+
+    shuffledPlayers.forEach((player, idx) => {
+      if(idx % 2 === 0) {
+        teamOne = [...teamOne, player];
+      } else {
+        teamTwo = [...teamTwo, player];
+      }
+    })
+
+    return {teamOne, teamTwo};
+  },
+
   handleCreateTeams(allPlayers) {
     let level1 = [];
     let level2 = [];
