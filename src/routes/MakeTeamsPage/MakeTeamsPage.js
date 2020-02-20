@@ -34,7 +34,7 @@ export default class SingleGroupPage extends React.Component {
   handleMakeRandomTeams = () => {
     const teams = SplitTeamsService.handleCreateRandomTeams(
       this.state.allPlayers
-    );
+    )
     this.setState(teams);
   };
 
