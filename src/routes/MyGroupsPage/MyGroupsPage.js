@@ -74,7 +74,7 @@ export default class MyGroupPage extends React.Component {
           {this.renderMyGroups()}
         </ul>
         {this.state.addGroup ? 
-        <CreateGroupForm toggleForm={this.toggleAddGroup} onAddFail = {this.handleAddFail} addGroup={this.addGroup} pageOwnerId = {this.props.match.params.user_id}/> : 
+        <CreateGroupForm toggleForm={this.toggleAddGroup} onAddFail = {this.handleAddFail} addGroup={this.addGroup} pageOwnerId = {this.state.user_id}/> : 
         <button className='button' onClick={this.toggleAddGroup}>Create New Group</button>}
       </div>
     );

@@ -8,9 +8,11 @@ export default class CreateGroupForm extends React.Component {
     error: null,
   }
 
+  //when form is submitted we check to make sure the user that is logged owns the groups on this page
+  //if they don't we set an error, if they do we POST the group to the API and add it to the parent's state
   handleSubmit = ev => {
     ev.preventDefault();
-    const {group_name} = ev.target
+    const { group_name } = ev.target
     const user_id = TokenService.getUserIdFromToken();
     const group = {group_name: group_name.value, user_id };
     if(user_id !== parseInt(this.props.pageOwnerId)){
