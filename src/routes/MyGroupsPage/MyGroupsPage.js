@@ -15,8 +15,10 @@ export default class MyGroupPage extends React.Component {
     error: null, 
     groups: [],
     addGroup: false,
+    user_id: this.props.match.params.user_id,
   }
 
+  //toggle a form to add a group
   toggleAddGroup = () => {
     this.setState({addGroup: !this.state.addGroup});
   }
@@ -32,7 +34,7 @@ export default class MyGroupPage extends React.Component {
   }
 
   componentDidMount() {
-    groupApiService.getGroupsByUserId(this.props.match.params.user_id)
+    groupApiService.getGroupsByUserId(this.state.user_id)
       .then(groups =>{
         this.setState({
           groups,
@@ -44,6 +46,7 @@ export default class MyGroupPage extends React.Component {
       });
   }
     
+  //make a JSX element for each group that links to that group page
   renderMyGroups = () =>{
     const groupArray = this.state.groups.map(group =>{
       return (
@@ -71,7 +74,7 @@ export default class MyGroupPage extends React.Component {
           {this.renderMyGroups()}
         </ul>
         {this.state.addGroup ? 
-        <CreateGroupForm toggleForm={this.toggleAddGroup} onAddFail = {this.handleAddFail} addGroup={this.addGroup} pageOwnerId = {this.props.match.params.user_id}/> : 
+        <CreateGroupForm toggleForm={this.toggleAddGroup} onAddFail = {this.handleAddFail} addGroup={this.addGroup} pageOwnerId = {this.state.user_id}/> : 
         <button className='button' onClick={this.toggleAddGroup}>Create New Group</button>}
       </div>
     );

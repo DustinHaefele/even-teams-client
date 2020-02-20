@@ -9,7 +9,6 @@ export default class UserListItem extends React.Component {
   }
   
   handleAddUser = (player_name, player_skill, user_id) => {
-    console.log(player_skill);
     const player = {
       player_name,
       player_skill,
@@ -20,7 +19,6 @@ export default class UserListItem extends React.Component {
     playerApiService
       .addPlayerToGroup(player)
       .then(player => {
-        console.log('in then statement');
         this.props.addPlayer(player);
         this.props.toggleForm();
       })
@@ -32,7 +30,6 @@ export default class UserListItem extends React.Component {
   };
 
   handleSkillChange = ev => {
-    console.log(ev.target.value);
     this.setState({skill: ev.target.value}) 
   }
 

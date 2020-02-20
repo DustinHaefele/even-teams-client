@@ -40,7 +40,8 @@
   handleCreateRandomTeams(allPlayers) {
     let teamOne = [];
     let teamTwo = [];
-    let shuffledPlayers = this.shuffle(allPlayers);
+
+    let shuffledPlayers = this.shuffle([...allPlayers]);
 
     shuffledPlayers.forEach((player, idx) => {
       if(idx % 2 === 0) {

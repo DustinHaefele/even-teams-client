@@ -5,7 +5,7 @@ import './RegistrationPage.css';
 export default class RegistrationPage extends React.Component {
 
   handleRegistrationSuccess = () =>{
-    const {history} = this.props
+    const { history } = this.props
     history.push('/login');
   }
 
